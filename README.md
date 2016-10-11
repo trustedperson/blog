@@ -1,2 +1,2 @@
 # demos
-my dems
+my dems and trash
