@@ -1,0 +1,695 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fle",
+				"flex-direction"
+			],
+			[
+				"st",
+				"flex-start"
+			],
+			[
+				"flex-",
+				"flex-start"
+			],
+			[
+				"align",
+				"align-items"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"font",
+				"font"
+			],
+			[
+				"ali",
+				"align-items"
+			],
+			[
+				"ren",
+				"image-rendering"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"flex",
+				"flex-direction"
+			],
+			[
+				"bac",
+				"background-attachment"
+			],
+			[
+				"ba",
+				"background-image"
+			],
+			[
+				"borde",
+				"border-color"
+			],
+			[
+				"tras",
+				"transition"
+			],
+			[
+				"reg",
+				"reg_msg"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"pa",
+				"padding-bottom"
+			],
+			[
+				"paddi",
+				"padding-left"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"middle",
+				"middlename"
+			],
+			[
+				"last",
+				"lastname"
+			],
+			[
+				"lo",
+				"login_count"
+			],
+			[
+				"for",
+				"foreach\tforeach …"
+			],
+			[
+				"mysql_fet",
+				"mysql_fetch_row"
+			],
+			[
+				"ac",
+				"action\tAttr"
+			],
+			[
+				"t",
+				"text-decoration"
+			],
+			[
+				"h",
+				"h2\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.php",
+			"settings":
+			{
+				"buffer_size": 1529,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/index.css",
+			"settings":
+			{
+				"buffer_size": 1361,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/main.js",
+			"settings":
+			{
+				"buffer_size": 505,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "in",
+		"selected_items":
+		[
+			[
+				"in",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"inden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"inde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"pfefe",
+				"Preferences: Settings - Default"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/alexandr/Documents/mySite",
+		"/C/Users/alexandr/Documents/mySite/css",
+		"/C/Users/alexandr/Documents/mySite/js"
+	],
+	"file_history":
+	[
+		"/C/Users/alexandr/Documents/mySite/css/index.css",
+		"/C/Users/alexandr/AppData/Local/Temp/scp48169/demo.qweekdev.com/public_html/css/index.css",
+		"/C/Users/alexandr/AppData/Local/Temp/scp09683/demo.qweekdev.com/public_html/js/main.js",
+		"/C/Users/alexandr/AppData/Local/Temp/scp09648/demo.qweekdev.com/public_html/index.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp09176/demo.qweekdev.com/public_html/css/index.css",
+		"/C/Users/alexandr/Documents/mySite/index.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp51901/demo.qweekdev.com/public_html/index.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp35517/demo.qweekdev.com/public_html/js/main.js",
+		"/C/Users/alexandr/AppData/Local/Temp/scp11982/demo.qweekdev.com/public_html/login.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp52178/demo.qweekdev.com/public_html/css/index.css",
+		"/C/Users/alexandr/AppData/Local/Temp/scp11018/demo.qweekdev.com/public_html/include/try_login.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp55442/demo.qweekdev.com/public_html/favicon.png",
+		"/C/Users/alexandr/AppData/Local/Temp/Rar$DIa0.110/pizzadudedotdk.txt",
+		"/C/Users/alexandr/Documents/My Games/Titan Quest - Immortal Throne/Settings/options.txt",
+		"/C/Users/alexandr/AppData/Local/Temp/scp11500/home/alexandr/.ssh/authorized_keys",
+		"/C/Users/alexandr/Documents/wp/wp-includes/wp-db.php",
+		"/C/Users/alexandr/Documents/wp/wp-includes/query.php",
+		"/C/Users/alexandr/Documents/wp/wp-includes/general-template.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp32331/demo.qweekdev.com/public_html/wp/wp-content/themes/gk-portfolio/index.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp31352/demo.qweekdev.com/public_html/wp/wp-load.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp28917/demo.qweekdev.com/public_html/wp/wp-includes/comment.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp25998/demo.qweekdev.com/public_html/wp/wp-includes/class-wp-ajax-response.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp20321/demo.qweekdev.com/public_html/wp/wp-includes/class-phpmailer.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp18482/demo.qweekdev.com/public_html/wp/wp-includes/certificates/ca-bundle.crt",
+		"/C/Users/alexandr/AppData/Local/Temp/scp37324/home/alexandr/1.8/server.properties",
+		"/C/Users/alexandr/AppData/Local/Temp/scp31953/home/alexandr/1.8/startserver.sh",
+		"/C/Users/alexandr/Documents/wp/wp-includes/plugin.php",
+		"/C/Users/alexandr/Documents/wp/wp-includes/template.php",
+		"/C/Users/alexandr/Documents/wp/wp-includes/functions.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp39404/demo.qweekdev.com/public_html/index.php",
+		"/C/Users/alexandr/Documents/wp/wp-content/themes/gk-portfolio/index.php",
+		"/C/Users/alexandr/Documents/wp/wp-load.php",
+		"/C/Users/alexandr/Documents/wp/wp-includes/load.php",
+		"/C/Users/alexandr/Documents/wp/wp-blog-header.php",
+		"/C/Users/alexandr/Documents/wp/index.php",
+		"/C/Users/alexandr/Documents/wp/wp-content/themes/index.php",
+		"/C/Users/alexandr/Documents/wp/wp-content/index.php",
+		"/C/Users/alexandr/Documents/wp/wp-includes/template-loader.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp35995/demo.qweekdev.com/public_html/index.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp37419/demo.qweekdev.com/public_html/css/index.css",
+		"/C/Users/alexandr/AppData/Local/Temp/scp14334/demo.qweekdev.com/public_html/lol/index.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp11814/demo.qweekdev.com/public_html/login.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp11401/demo.qweekdev.com/public_html/reg.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp12770/demo.qweekdev.com/public_html/include/session_lifetime.php",
+		"/C/Users/alexandr/Downloads/hosts",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/Users/alexandr/AppData/Local/Temp/scp57524/demo.qweekdev.com/public_html/wp/wp-includes/template-loader.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp17456/demo.qweekdev.com/public_html/wp/readme.md",
+		"/C/Users/alexandr/AppData/Local/Temp/scp15203/demo.qweekdev.com/public_html/wp/index.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp12457/demo.qweekdev.com/public_html/wp/wp-includes/load.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp15582/demo.qweekdev.com/public_html/wp/wp-includes/functions.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp52276/demo.qweekdev.com/public_html/wp/wp-blog-header.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp53807/demo.qweekdev.com/public_html/wp/wp-load.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp07003/demo.qweekdev.com/public_html/wp/wp-content/themes/gk-portfolio/js/customize-preview.js",
+		"/C/Users/alexandr/AppData/Local/Temp/scp07964/demo.qweekdev.com/public_html/wp/wp-content/themes/gk-portfolio/js/functions.js",
+		"/C/Users/alexandr/Downloads/gk-portfolio.1.5.3/gk-portfolio/sanitization.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp17497/demo.qweekdev.com/public_html/wp/screenshot.png",
+		"/C/Users/alexandr/Documents/java_t/SimpleApplet.java",
+		"/C/Users/alexandr/Documents/java_t/Callme.class",
+		"/C/Users/alexandr/AppData/Local/Temp/scp21611/demo.qweekdev.com/public_html/login.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp18513/demo.qweekdev.com/public_html/index.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp16794/demo.qweekdev.com/public_html/reg.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp21269/demo.qweekdev.com/public_html/css/sign_forms.css",
+		"/C/Users/alexandr/AppData/Local/Temp/scp18182/demo.qweekdev.com/public_html/css/index.css",
+		"/C/Users/alexandr/AppData/Local/Temp/scp15978/demo.qweekdev.com/public_html/login.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp29486/demo.qweekdev.com/public_html/css/sign_forms.css",
+		"/C/Users/alexandr/AppData/Local/Temp/scp26031/demo.qweekdev.com/public_html/reg.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp32937/demo.qweekdev.com/public_html/include/try_reg.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp15313/demo.qweekdev.com/public_html/index.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp27615/demo.qweekdev.com/public_html/css/index.css",
+		"/C/Users/alexandr/AppData/Local/Temp/scp26230/demo.qweekdev.com/public_html/css/main.css",
+		"/C/Users/alexandr/AppData/Local/Temp/scp15206/demo.qweekdev.com/public_html/include/session_lifetime.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp22716/demo.qweekdev.com/public_html/exit.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp22751/demo.qweekdev.com/public_html/try_reg.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp53475/demo.qweekdev.com/public_html/reg_form.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp57863/demo.qweekdev.com/public_html/tryToLogin.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp53899/demo.qweekdev.com/public_html/tryToRegUser.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp07362/demo.qweekdev.com/public_html/include/sessionLifeTime.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp07826/demo.qweekdev.com/public_html/include/sessionLifeTime",
+		"/C/Users/alexandr/AppData/Local/Temp/scp17850/demo.qweekdev.com/public_html/db.php",
+		"/C/Users/alexandr/Downloads/sftpplug/readme.txt",
+		"/C/Users/alexandr/Downloads/php_code/generate_users.php",
+		"/C/Users/alexandr/Downloads/php_code/firstnames_fem.txt",
+		"/C/Users/alexandr/Downloads/php_code/vote.php",
+		"/C/Users/alexandr/Downloads/php_code/index.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp36178/home/alexandr/wordpress/robots.txt",
+		"/C/Users/alexandr/AppData/Local/Temp/scp42834/etc/apache2/sites-enabled/a.qweekdev.com.conf",
+		"/C/Users/alexandr/AppData/Local/Temp/scp42802/home/alexandr/php_code/robots.txt",
+		"/C/Users/alexandr/AppData/Local/Temp/scp42424/etc/apache2/sites-enabled/demo.qweekdev.com.conf",
+		"/C/Users/alexandr/AppData/Local/Temp/scp42387/etc/apache2/sites-enabled/g.qweekdev.com.conf",
+		"/C/Users/alexandr/shut.bat",
+		"/C/Users/alexandr/AppData/Local/Temp/scp45441/home/alexandr/php_code/scripts/dem.js",
+		"/C/Users/alexandr/Downloads/albom/js/peppermint/package.json",
+		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_21_04_39.txt",
+		"/C/Users/alexandr/AppData/Local/Temp/Rar$DIa0.543/canvas-manipulation.js",
+		"/C/Users/alexandr/AppData/Local/Temp/Rar$EXa0.036/vogdb-canvas-manipulation-7eb148bfe218/examples/mouse.html",
+		"/C/Users/alexandr/AppData/Local/Temp/Rar$EXa0.480/vogdb-canvas-manipulation-7eb148bfe218/examples/touch.html",
+		"/C/Users/alexandr/AppData/Local/Temp/scp44579/home/alexandr/php_code/index.php",
+		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_11_55_46.js",
+		"/C/Users/alexandr/AppData/Local/Temp/scp49127/etc/apache2/sites-available/g.qweekdev.com.conf",
+		"/C/Users/alexandr/Downloads/albom/index.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp49631/etc/apache2/sites-available/a.qweekdev.com.conf",
+		"/C/Users/alexandr/AppData/Local/Temp/scp50030/home/alexandr/php_code/scripts/main.js",
+		"/C/Users/alexandr/AppData/Local/Temp/scp50547/home/alexandr/php_code/index.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp50481/home/alexandr/php_code/generate_users.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp48781/etc/apache2/sites-enabled/g.qweekdev.com.conf",
+		"/C/Users/alexandr/Downloads/albom/js/Gruntfile.js",
+		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_21_02_12.js",
+		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_21_02_17.js",
+		"/C/Users/alexandr/Downloads/albom/js/swipe.js",
+		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_21_02_03.js",
+		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_17_46_18.js",
+		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_17_46_46.txt",
+		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_17_46_41.js",
+		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_17_46_26.txt",
+		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_17_45_49.txt",
+		"/C/Users/alexandr/AppData/Local/Temp/scp26891/etc/apache2/sites-enabled/g.qweekdev.com.conf",
+		"/C/Users/alexandr/AppData/Local/Temp/scp15787/etc/apache2/sites-enabled/demo.qweekdev.com.conf",
+		"/C/Users/alexandr/Downloads/albom/Привет!",
+		"/C/Users/alexandr/AppData/Local/Temp/scp16424/etc/apache2/apache2.conf",
+		"/C/Users/alexandr/AppData/Local/Temp/scp18634/home/alexandr/php_code/index.php",
+		"/C/Users/alexandr/AppData/Local/Temp/scp18532/home/alexandr/java/jre1.8.0_60/Welcome.html",
+		"/C/Users/alexandr/Downloads/photo-perfect/css/editor-style.css",
+		"/C/Users/alexandr/Downloads/photo-perfect/functions.php",
+		"/C/Users/alexandr/Downloads/photo-perfect/style.css",
+		"/C/Users/alexandr/Downloads/photo-perfect/inc/hook/custom.php",
+		"/C/Users/alexandr/Downloads/photo-perfect/inc/hook/structure.php",
+		"/C/Users/alexandr/Downloads/photo-perfect/header.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"one",
+			"13",
+			"15",
+			"17",
+			"</a>",
+			"width",
+			"mysql_connect",
+			"mysql",
+			"send",
+			"function get_header",
+			"get_header",
+			"E6E6FA",
+			"<br>",
+			"do_action",
+			"guess",
+			"'' != WP_SITEURL",
+			"guess",
+			"h2",
+			"h1",
+			"alert-success",
+			".logo",
+			"top",
+			"script",
+			"img",
+			"div",
+			"15",
+			"div",
+			"custom.js",
+			"#333",
+			"color",
+			"li",
+			"#Navi",
+			"#Na",
+			"navi",
+			"featured-banner",
+			"feature",
+			"featur",
+			"clear",
+			"Menus",
+			"Navigation",
+			"li",
+			"li {",
+			"li",
+			"li {",
+			"post-content",
+			"photo_perfect_add_custom_header",
+			"featured-banner",
+			"featured_banner",
+			"site-title",
+			"site-",
+			"item",
+			"bann",
+			"action_he",
+			"photo_perfect_action",
+			"language_attributes()",
+			"photo_perfect_action_doctype",
+			"mod",
+			"mod_",
+			"task",
+			"Task",
+			"task",
+			"Task",
+			"act_showgroup",
+			"oncli",
+			"clientlib",
+			"membersofselectedgroup",
+			"Группы",
+			"участники",
+			"js",
+			"groups",
+			"Группы",
+			"группы",
+			"r",
+			"groupmemberroles",
+			"Y.",
+			"node",
+			"yui",
+			"refreshMembers()",
+			"core_group",
+			"singlegroup",
+			"atleastonemember",
+			"add_module",
+			"js",
+			"firstnames",
+			"firstnames_fem",
+			"firstname",
+			"first",
+			"max_exe",
+			",",
+			"password_verify",
+			"password_hash",
+			"hash_internal_user_password",
+			"password_hash",
+			"stdClass()",
+			"$frm",
+			"    $",
+			"frm",
+			"'",
+			"max_",
+			"pass",
+			"password",
+			"setnew_password_and_mail",
+			"showH1Tags",
+			"upload_max",
+			"192",
+			"168.1.2",
+			"dqweekdev",
+			"<",
+			"p>",
+			"'<p",
+			"'<"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"user",
+			"User",
+			"user",
+			"User"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1529,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								450,
+								450
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "css/index.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1361,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								760,
+								760
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 462.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "js/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 505,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								173,
+								173
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 285.0
+	},
+	"pinned_build_system": "",
+	"project": "mySite.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"group/clientlib.js",
+				"group\\clientlib.js"
+			],
+			[
+				"grouindex",
+				"group\\index.php"
+			],
+			[
+				"logininde",
+				"login\\index.php"
+			],
+			[
+				"dele",
+				"course\\delete.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 322.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
