@@ -155,10 +155,62 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 219.0,
-		"last_filter": "inde",
+		"height": 196.0,
+		"last_filter": "packdis",
 		"selected_items":
 		[
+			[
+				"packdis",
+				"Package Control: Disable Package"
+			],
+			[
+				"git commit ",
+				"Git: Commit"
+			],
+			[
+				"git",
+				"Git: Status"
+			],
+			[
+				"pakcena",
+				"Package Control: Enable Package"
+			],
+			[
+				"packins",
+				"Package Control: Install Package"
+			],
+			[
+				"packin",
+				"Package Control: Install Package"
+			],
+			[
+				"git commit",
+				"Git: Commit"
+			],
+			[
+				"gitstt",
+				"Git: Status"
+			],
+			[
+				"packconin",
+				"Package Control: Install Package"
+			],
+			[
+				"packcon",
+				"Package Control: Install Package"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack",
+				"Preferences: Browse Packages"
+			],
 			[
 				"inde",
 				"Indentation: Reindent Lines"
@@ -188,7 +240,7 @@
 				"Preferences: Settings - Default"
 			]
 		],
-		"width": 512.0
+		"width": 432.0
 	},
 	"console":
 	{
@@ -215,14 +267,17 @@
 	"file_history":
 	[
 		"/C/Users/alexandr/Documents/mySite/index.php",
+		"/C/Users/alexandr/AppData/Roaming/Sublime Text 3/Packages/User/Git GUI Clients.sublime-settings",
+		"/C/Users/alexandr/AppData/Roaming/Sublime Text 3/Packages/DocBlockr/README.md",
+		"/C/Users/alexandr/AppData/Roaming/Sublime Text 3/Packages/User/Git.sublime-settings",
 		"/C/Users/alexandr/Documents/mySite/css/index.css",
+		"/C/Users/alexandr/Documents/mySite/js/main.js",
+		"/C/Users/alexandr/Documents/mySite/.gitignore",
 		"/C/Users/alexandr/Documents/mySite/.htaccess",
 		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_08_03_08.txt",
 		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_08_03_30.txt",
 		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_07_52_36.txt",
-		"/C/Users/alexandr/Documents/mySite/.gitignore",
 		"/C/Users/alexandr/AppData/Local/Temp/scp46354/demo.qweekdev.com/public_html/.htaccess",
-		"/C/Users/alexandr/Documents/mySite/js/main.js",
 		"/C/Users/alexandr/Documents/mySite/css/sign_forms.css",
 		"/C/Users/alexandr/Documents/mySite/README.md",
 		"/C/Users/alexandr/Documents/mySite/include/ez_sql_mysql.php",
@@ -338,10 +393,7 @@
 		"/C/Users/alexandr/AppData/Local/Temp/scp45441/home/alexandr/php_code/scripts/dem.js",
 		"/C/Users/alexandr/Downloads/albom/js/peppermint/package.json",
 		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_21_04_39.txt",
-		"/C/Users/alexandr/AppData/Local/Temp/Rar$DIa0.543/canvas-manipulation.js",
-		"/C/Users/alexandr/AppData/Local/Temp/Rar$EXa0.036/vogdb-canvas-manipulation-7eb148bfe218/examples/mouse.html",
-		"/C/Users/alexandr/AppData/Local/Temp/Rar$EXa0.480/vogdb-canvas-manipulation-7eb148bfe218/examples/touch.html",
-		"/C/Users/alexandr/AppData/Local/Temp/scp44579/home/alexandr/php_code/index.php"
+		"/C/Users/alexandr/AppData/Local/Temp/Rar$DIa0.543/canvas-manipulation.js"
 	],
 	"find":
 	{
@@ -549,6 +601,14 @@
 	"output.find_results":
 	{
 		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 94.0
+	},
+	"output.git-commit":
+	{
+		"height": 94.0
 	},
 	"output.unsaved_changes":
 	{
