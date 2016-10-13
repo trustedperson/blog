@@ -3,14 +3,14 @@ session_start();
 include('include/session_lifetime.php');
 $loginResult = include ("include/try_login.php");
 if(!empty($_SESSION['id']) or !empty($_SESSION['login'])) {
-    header('Location: http://demo.qweekdev.com/');
+    header('Location: http://alotof.work/');
     exit;
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="https://demo.qweekdev.com/favicon.png">
+    <link rel="icon" type="image/png" href="https://alotof.work/favicon.png">
     <link rel="stylesheet" type="text/css" href="css/sign_forms.css">
     <script src="https://use.fontawesome.com/7e24d392b6.js"></script>
     <meta charset="UTF-8">

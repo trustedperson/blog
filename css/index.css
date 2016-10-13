@@ -5,7 +5,7 @@
 
 html {
     height: 100%;
-    /*background: url("../wall2x2.png");*/
+    background-color: gray; 
 }
 
 body {
@@ -17,17 +17,17 @@ body {
 }
 
 a {
-    font-family: pixelFont;
-    color: white;
-    text-decoration: none;
-    margin: 5px;
-    padding: 10px;
-    transition: background-color 700ms, box-shadow 300ms;
+
 }
 
 a:focus,a:hover {
-    background-color: #007d7d;
-    box-shadow: 1px 1px 2px 2px black;
+    color: #00cbcd;
+    text-shadow: 1px 1px black;
+}
+
+#avatar {
+    width: 35em;
+    height: 20em;
 }
 
 .content {
@@ -37,11 +37,18 @@ a:focus,a:hover {
     display: flex;
     flex-direction: column; 
     align-items: center;
+    flex-grow: 1;
+
 }
 
-.btn_wrap{
-    display: flex;
-    flex-direction: row;
+.content_button {
+    font-size: 30px;
+    font-family: pixelFont;
+    color: white;
+    text-decoration: none;
+    margin: 5px;
+    padding: 10px;
+    transition: color 500ms, text-shadow 500ms;
 }
 
 .pointer {
@@ -52,25 +59,43 @@ a:focus,a:hover {
     transition: top 500ms cubic-bezier(0.000, 0.935, 0.050, 1.000), left 500ms cubic-bezier(0.000, 0.935, 0.050, 1.000);
 }
 
-.point_button {
-    font-size: 30px;
-}
-
-#avatar {
-    width: 35em;
-    height: 20em;
-}
-
-@keyframes mymove {
-    0% {box-shadow: 0px 0px 11px 10px #8B0A50;}
-    25% {box-shadow: 0px 0px 11px 10px #FF0000;}
-    50% {box-shadow: 0px 0px 11px 10px #00F5FF;}
-    100% {box-shadow: 0px 0px 11px 10px #FFFF00;}
-}
-
 .top_right_panel {
     position: absolute;
     
     right: 50px;
-    background-color: green;
+    background-color: #008B8B;
+}
+
+.top_right_panel_button {
+    font-size: 20px;
+    font-family: pixelFont;
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 5px;
+    padding: 5px;
+    transition: color 500ms, text-shadow 500ms;
+}
+
+.tooltip {
+    margin-left: 10px;
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    transform: scale(1,0);
+    background: url(../tooltip.gif);
+    transition: transform 300ms, height 0.5s, top 600ms;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tooltip_text {
+    font-size: 90%;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding-top: 10px;
+    padding-bottom: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
 }

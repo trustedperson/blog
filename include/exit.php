@@ -3,7 +3,7 @@ session_start();
 unset($_SESSION['login']);
 unset($_SESSION['id']);
 if (empty($_SESSION['login']) or empty($_SESSION['id'])) {
-	header('Location: http://demo.qweekdev.com/');
+	header('Location: http://alotof.work/');
     exit;
 }
 else echo "<!DOCTYPE html>

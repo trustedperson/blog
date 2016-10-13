@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="https://demo.qweekdev.com/favicon.png">
+    <link rel="icon" type="image/png" href="https://alotof.work/favicon.png">
     <link rel="stylesheet" type="text/css" href="css/index.css">
 	<script src="https://use.fontawesome.com/7e24d392b6.js"></script>
 	<script src="/js/main.js"></script>
@@ -14,19 +14,24 @@
     include('include/session_lifetime.php');
 ?>
 <body>
-    <img class="pointer" src="https://alotof.work/chicken.gif">
     <div class="top_right_panel">
             <?php
             if(empty($_SESSION['id']) or empty($_SESSION['login'])) {
-                echo '<div class="btn_wrap"><a class="point_button" href="login.php">Login page</a></div>';
-                echo '<div class="btn_wrap"><a class="point_button" href="reg.php">Sign UP</a></div>';
+                echo '<a class="top_right_panel_button" href="login.php">Login page</a>';
+                echo '<a class="top_right_panel_button" href="reg.php">Sign UP</a>';
             }
 
             ?>
     </div>
+    <img class="pointer" src="https://alotof.work/chicken.gif">
+    <img id="avatar" src="https://alotof.work/avatar2.png">
+    <div class="tooltip">
+        <div class="tooltip_text">hi this is tooltip
+        </div>
+    </div>
     <div class="content">
-        <img id="avatar" src="https://demo.qweekdev.com/avatar.png">
-        <div class="btn_wrap"><a class="point_button" href="https://demo.qweekdev.com/wp/" target="_blank">Wordpress</a></div>
+        <a class="content_button" href="https://alotof.work/wp/" data-section="wordpress" target="_blank">Wordpress</a>
+        <a class="content_button" href="" data-section="todo" target="_blank">"todo list" service</a>
     </div>
     <?php if(isset($_SESSION['reg_msg'])) {echo $_SESSION['reg_msg']; unset($_SESSION['reg_msg']);} ?>
 
@@ -48,19 +53,11 @@
 
     // Initialise database object and establish a connection
     // at the same time - db_user / db_password / db_name / db_host
-    $db = new ezSQL_mysql($db_user,$db_password,$db_name,$db_host);
+    // $db = new ezSQL_mysql($db_user,$db_password,$db_name,$db_host);
 
-    /**********************************************************************
-    *  ezSQL demo for mySQL database
-    */
+    // $var2 = $db->get_results("SELECT user_login, user_email, meta_value AS 'last name' FROM wp1_users AS u, wp1_usermeta AS m WHERE meta_key='last_name' AND u.ID=m.user_id");
+    // $db->debug();
 
-    // Demo of getting a single variable from the db
-    // (and using abstracted function sysdate)
-    $current_time = $db->get_var("SELECT " . $db->sysdate());
-    print "ezSQL demo for mySQL database run @ $current_time";
-
-    // Print out last query and results..
-    $db->debug();
     ?>
 </body>
 </html>

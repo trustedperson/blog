@@ -30,7 +30,7 @@ if($_POST['action']=='reg') {
         if ($result2=='TRUE')
         {
         $_SESSION['reg_msg'] = "Вы успешно зарегистрированы!";
-        header('Location: http://demo.qweekdev.com/');
+        header('Location: http://alotof.work/');
         exit;
         }
         else {
