@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="https://alotof.work/favicon.png">
+    <link rel="icon" type="image/png" href="https://alotof.work/images/favicon.png">
     <link rel="stylesheet" type="text/css" href="css/index.css">
 	<script src="https://use.fontawesome.com/7e24d392b6.js"></script>
 	<script src="/js/main.js"></script>
@@ -23,8 +23,8 @@
 
             ?>
     </div>
-    <img class="pointer" src="https://alotof.work/chicken.gif">
-    <img id="avatar" src="https://alotof.work/avatar2.png">
+    <img class="pointer" src="https://alotof.work/images/chicken.gif">
+    <img id="avatar" src="https://alotof.work/images/avatar2.png">
     <div class="tooltip">
         <div class="tooltip_text">hi this is tooltip
         </div>

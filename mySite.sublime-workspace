@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"fon",
+				"font-size"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"left",
+				"margin-left"
+			],
+			[
+				"tra",
+				"transform"
+			],
+			[
+				"to",
+				"tooltip"
+			],
+			[
+				"text",
+				"text-shadow"
+			],
+			[
 				"incl",
 				"include_once"
 			],
@@ -22,14 +54,6 @@
 			[
 				"align",
 				"align-items"
-			],
-			[
-				"text",
-				"text-decoration"
-			],
-			[
-				"font",
-				"font"
 			],
 			[
 				"ali",
@@ -70,10 +94,6 @@
 			[
 				"box",
 				"box-shadow"
-			],
-			[
-				"pa",
-				"padding-bottom"
 			],
 			[
 				"paddi",
@@ -127,67 +147,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "index.php",
-			"settings":
-			{
-				"buffer_size": 2399,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "css/index.css",
-			"settings":
-			{
-				"buffer_size": 1361,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/main.js",
-			"settings":
-			{
-				"buffer_size": 505,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "include/ez_sql_core.php",
-			"settings":
-			{
-				"buffer_size": 17137,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "Searching 20 files for \"function debug\" (case sensitive)\n\nC:\\Users\\alexandr\\Documents\\mySite\\include\\ez_sql_core.php:\n  426  \t\t*/\n  427  \n  428: \t\tfunction debug($print_to_screen=true)\n  429  \t\t{\n  430  \n\n1 match in 1 file\n",
-			"settings":
-			{
-				"buffer_size": 223,
-				"line_ending": "Windows",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
-			"file": "include/ez_sql_mysql.php",
-			"settings":
-			{
-				"buffer_size": 9555,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/alexandr/ezSQL/mysql/demo.php",
-			"settings":
-			{
-				"buffer_size": 1211,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -196,10 +155,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 35.0,
-		"last_filter": "",
+		"height": 219.0,
+		"last_filter": "inde",
 		"selected_items":
 		[
+			[
+				"inde",
+				"Indentation: Reindent Lines"
+			],
 			[
 				"in",
 				"Indentation: Reindent Lines"
@@ -221,15 +184,11 @@
 				"Indentation: Reindent Lines"
 			],
 			[
-				"inde",
-				"Indentation: Reindent Lines"
-			],
-			[
 				"pfefe",
 				"Preferences: Settings - Default"
 			]
 		],
-		"width": 392.0
+		"width": 512.0
 	},
 	"console":
 	{
@@ -251,13 +210,29 @@
 	[
 		"/C/Users/alexandr/Documents/mySite",
 		"/C/Users/alexandr/Documents/mySite/css",
-		"/C/Users/alexandr/Documents/mySite/include",
 		"/C/Users/alexandr/Documents/mySite/js"
 	],
 	"file_history":
 	[
-		"/C/Users/alexandr/Documents/mySite/.git/info/exclude",
+		"/C/Users/alexandr/Documents/mySite/index.php",
+		"/C/Users/alexandr/Documents/mySite/css/index.css",
+		"/C/Users/alexandr/Documents/mySite/.htaccess",
+		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_08_03_08.txt",
+		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_08_03_30.txt",
+		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_07_52_36.txt",
 		"/C/Users/alexandr/Documents/mySite/.gitignore",
+		"/C/Users/alexandr/AppData/Local/Temp/scp46354/demo.qweekdev.com/public_html/.htaccess",
+		"/C/Users/alexandr/Documents/mySite/js/main.js",
+		"/C/Users/alexandr/Documents/mySite/css/sign_forms.css",
+		"/C/Users/alexandr/Documents/mySite/README.md",
+		"/C/Users/alexandr/Documents/mySite/include/ez_sql_mysql.php",
+		"/C/Users/alexandr/Documents/mySite/include/ez_sql_core.php",
+		"/C/Users/alexandr/Documents/mySite/login.php",
+		"/C/Users/alexandr/Documents/mySite/reg.php",
+		"/C/Users/alexandr/Documents/mySite/include/exit.php",
+		"/C/Users/alexandr/Documents/mySite/include/try_reg.php",
+		"/C/Users/alexandr/ezSQL/mysql/demo.php",
+		"/C/Users/alexandr/Documents/mySite/.git/info/exclude",
 		"/C/Users/alexandr/AppData/Local/Temp/scp17157/demo.qweekdev.com/public_html/README.md",
 		"/C/Users/alexandr/Documents/mySite/.git/FETCH_HEAD",
 		"/C/Users/alexandr/Documents/mySite/.git/config",
@@ -271,12 +246,10 @@
 		"/C/Users/alexandr/ezSQL/ez_sql_help.htm",
 		"/C/Users/alexandr/ezSQL/mysql/disk_cache_example.php",
 		"/C/Users/alexandr/ezSQL/ez_sql_with_smarty.html",
-		"/C/Users/alexandr/Documents/mySite/css/index.css",
 		"/C/Users/alexandr/AppData/Local/Temp/scp48169/demo.qweekdev.com/public_html/css/index.css",
 		"/C/Users/alexandr/AppData/Local/Temp/scp09683/demo.qweekdev.com/public_html/js/main.js",
 		"/C/Users/alexandr/AppData/Local/Temp/scp09648/demo.qweekdev.com/public_html/index.php",
 		"/C/Users/alexandr/AppData/Local/Temp/scp09176/demo.qweekdev.com/public_html/css/index.css",
-		"/C/Users/alexandr/Documents/mySite/index.php",
 		"/C/Users/alexandr/AppData/Local/Temp/scp51901/demo.qweekdev.com/public_html/index.php",
 		"/C/Users/alexandr/AppData/Local/Temp/scp35517/demo.qweekdev.com/public_html/js/main.js",
 		"/C/Users/alexandr/AppData/Local/Temp/scp11982/demo.qweekdev.com/public_html/login.php",
@@ -368,22 +341,7 @@
 		"/C/Users/alexandr/AppData/Local/Temp/Rar$DIa0.543/canvas-manipulation.js",
 		"/C/Users/alexandr/AppData/Local/Temp/Rar$EXa0.036/vogdb-canvas-manipulation-7eb148bfe218/examples/mouse.html",
 		"/C/Users/alexandr/AppData/Local/Temp/Rar$EXa0.480/vogdb-canvas-manipulation-7eb148bfe218/examples/touch.html",
-		"/C/Users/alexandr/AppData/Local/Temp/scp44579/home/alexandr/php_code/index.php",
-		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_11_55_46.js",
-		"/C/Users/alexandr/AppData/Local/Temp/scp49127/etc/apache2/sites-available/g.qweekdev.com.conf",
-		"/C/Users/alexandr/Downloads/albom/index.php",
-		"/C/Users/alexandr/AppData/Local/Temp/scp49631/etc/apache2/sites-available/a.qweekdev.com.conf",
-		"/C/Users/alexandr/AppData/Local/Temp/scp50030/home/alexandr/php_code/scripts/main.js",
-		"/C/Users/alexandr/AppData/Local/Temp/scp50547/home/alexandr/php_code/index.php",
-		"/C/Users/alexandr/AppData/Local/Temp/scp50481/home/alexandr/php_code/generate_users.php",
-		"/C/Users/alexandr/AppData/Local/Temp/scp48781/etc/apache2/sites-enabled/g.qweekdev.com.conf",
-		"/C/Users/alexandr/Downloads/albom/js/Gruntfile.js",
-		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_21_02_12.js",
-		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_21_02_17.js",
-		"/C/Users/alexandr/Downloads/albom/js/swipe.js",
-		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_21_02_03.js",
-		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_17_46_18.js",
-		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_17_46_46.txt"
+		"/C/Users/alexandr/AppData/Local/Temp/scp44579/home/alexandr/php_code/index.php"
 	],
 	"find":
 	{
@@ -402,6 +360,17 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"src",
+			"url",
+			"tooltip",
+			"data-tooltip",
+			"swordJump",
+			"y",
+			"x",
+			"sword",
+			"pb",
+			";\n",
+			"demo.qweekdev.com",
 			"get_var",
 			"function debug",
 			"debug",
@@ -518,9 +487,7 @@
 			"168.1.2",
 			"dqweekdev",
 			"<",
-			"p>",
-			"'<p",
-			"'<"
+			"p>"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -528,6 +495,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"alotof.work",
 			"user",
 			"User",
 			"user",
@@ -542,231 +510,8 @@
 	"groups":
 	[
 		{
-			"selected": 6,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2399,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2282,
-								2282
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 126.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "css/index.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1361,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								760,
-								760
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 133.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "js/main.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 505,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								173,
-								173
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "include/ez_sql_core.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 17137,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								16949,
-								16949
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 8382.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 223,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										147,
-										161
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								82,
-								82
-							]
-						],
-						"settings":
-						{
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([^ \t].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "include/ez_sql_mysql.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9555,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7137,
-								7137
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3384.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/C/Users/alexandr/ezSQL/mysql/demo.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1211,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1072,
-								1072
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
