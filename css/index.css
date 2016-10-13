@@ -84,7 +84,7 @@ a:focus,a:hover {
     width: 200px;
     transform: scale(1,0);
     background: url(../images/tooltip.gif);
-    transition: transform 300ms, height 0.5s, top 600ms;
+    transition: transform 300ms, height 0.5s, top 200ms;
     display: flex;
     flex-direction: row;
     align-items: center;

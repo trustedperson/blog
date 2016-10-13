@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	for ( i=0 ; i<cb.length; i++ ) {
 		cb[i].addEventListener("mouseover", pointerJump);
 	}
-	
+	tooltip.top = content.getBoundingClientRect().top;
 				
 
 function pointerJump(event) {
@@ -21,7 +21,6 @@ function pointerJump(event) {
 		pointer.style.top = "" + (t + 0) + "px";
 		pointer.style.left = "" + (l - 100) + "px";
 		tooltip.style.left = "" + (cr) + "px";
-		tooltip.style.top = "" + (t) + "px";
 		tooltip.style.transform = "scale(1,1)";
 		changeTooltipText(event.currentTarget.getAttribute("data-section"));
 	}
@@ -31,5 +30,6 @@ function changeTooltipText(section) {
 	else if (section == "todo") {tooltip_text.innerHTML = "Простой todo сервис"}
 	else tooltip_text.innerHTML = "";
 }
+
 
 });
