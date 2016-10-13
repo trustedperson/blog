@@ -1,2 +1,2 @@
 # demos
-my dems and trash
+i try to build mvc app

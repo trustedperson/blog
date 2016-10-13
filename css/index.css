@@ -83,7 +83,7 @@ a:focus,a:hover {
     height: 200px;
     width: 200px;
     transform: scale(1,0);
-    background: url(../tooltip.gif);
+    background: url(../images/tooltip.gif);
     transition: transform 300ms, height 0.5s, top 600ms;
     display: flex;
     flex-direction: row;
@@ -91,6 +91,7 @@ a:focus,a:hover {
 }
 
 .tooltip_text {
+    color: #555555;
     font-size: 90%;
     font-weight: bold;
     font-family: sans-serif;
