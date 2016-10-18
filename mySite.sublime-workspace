@@ -4,6 +4,62 @@
 		"selected_items":
 		[
 			[
+				"mo",
+				"mouseOutSlider"
+			],
+			[
+				"event",
+				"eventOut"
+			],
+			[
+				"eve",
+				"eventOut"
+			],
+			[
+				"len",
+				"length-1"
+			],
+			[
+				"timer",
+				"timerId"
+			],
+			[
+				"tim",
+				"timerId"
+			],
+			[
+				"mouse",
+				"mouseover"
+			],
+			[
+				"add",
+				"addEventListener"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"m",
+				"moveLeft"
+			],
+			[
+				"acti",
+				"active_panel"
+			],
+			[
+				"margi",
+				"margin-left"
+			],
+			[
+				"slide",
+				"slider_controls"
+			],
+			[
+				"tra",
+				"transition"
+			],
+			[
 				"fon",
 				"font-size"
 			],
@@ -22,10 +78,6 @@
 			[
 				"left",
 				"margin-left"
-			],
-			[
-				"tra",
-				"transform"
 			],
 			[
 				"to",
@@ -147,6 +199,33 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "index.php",
+			"settings":
+			{
+				"buffer_size": 3208,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/index.css",
+			"settings":
+			{
+				"buffer_size": 3048,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/main.js",
+			"settings":
+			{
+				"buffer_size": 3667,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -262,15 +341,33 @@
 	[
 		"/C/Users/alexandr/Documents/mySite",
 		"/C/Users/alexandr/Documents/mySite/css",
-		"/C/Users/alexandr/Documents/mySite/js"
+		"/C/Users/alexandr/Documents/mySite/js",
+		"/C/Users/alexandr/Documents/mySite/resources"
 	],
 	"file_history":
 	[
+		"/C/Users/alexandr/Documents/mySite/css/index.css",
+		"/C/Games/Fallout 2/DATA/Readme.txt",
+		"/C/Users/alexandr/Downloads/1.8/eula.txt",
+		"/C/Games/Fallout 2/fallout2.cfg",
+		"/C/Games/Fallout 2/f2_res.ini",
+		"/C/Games/Fallout 2/Elevators.ini",
+		"/C/Games/Fallout 2/ddraw.ini",
+		"/C/Games/Fallout 2/CRITTER.DAT",
+		"/C/Games/Fallout 2/DATA/Patch.txt",
+		"/C/Games/Fallout 2/corrections.txt",
+		"/C/Games/Fallout 2/killap_readme.txt",
+		"/C/Games/Fallout 2/party orders addon v10d Readme.txt",
+		"/C/Games/Fallout 2/README.TXT",
+		"/C/Games/Fallout 2/rp-changelog.txt",
+		"/C/Games/Fallout 2/rp-new_content.txt",
+		"/C/Games/Fallout 2/up-readme.txt",
+		"/C/Games/Fallout 2/rp-readme.txt",
+		"/C/Users/alexandr/Downloads/1.8/usercache.json",
 		"/C/Users/alexandr/Documents/mySite/index.php",
 		"/C/Users/alexandr/AppData/Roaming/Sublime Text 3/Packages/User/Git GUI Clients.sublime-settings",
 		"/C/Users/alexandr/AppData/Roaming/Sublime Text 3/Packages/DocBlockr/README.md",
 		"/C/Users/alexandr/AppData/Roaming/Sublime Text 3/Packages/User/Git.sublime-settings",
-		"/C/Users/alexandr/Documents/mySite/css/index.css",
 		"/C/Users/alexandr/Documents/mySite/js/main.js",
 		"/C/Users/alexandr/Documents/mySite/.gitignore",
 		"/C/Users/alexandr/Documents/mySite/.htaccess",
@@ -376,24 +473,7 @@
 		"/C/Users/alexandr/AppData/Local/Temp/scp53475/demo.qweekdev.com/public_html/reg_form.php",
 		"/C/Users/alexandr/AppData/Local/Temp/scp57863/demo.qweekdev.com/public_html/tryToLogin.php",
 		"/C/Users/alexandr/AppData/Local/Temp/scp53899/demo.qweekdev.com/public_html/tryToRegUser.php",
-		"/C/Users/alexandr/AppData/Local/Temp/scp07362/demo.qweekdev.com/public_html/include/sessionLifeTime.php",
-		"/C/Users/alexandr/AppData/Local/Temp/scp07826/demo.qweekdev.com/public_html/include/sessionLifeTime",
-		"/C/Users/alexandr/AppData/Local/Temp/scp17850/demo.qweekdev.com/public_html/db.php",
-		"/C/Users/alexandr/Downloads/sftpplug/readme.txt",
-		"/C/Users/alexandr/Downloads/php_code/generate_users.php",
-		"/C/Users/alexandr/Downloads/php_code/firstnames_fem.txt",
-		"/C/Users/alexandr/Downloads/php_code/vote.php",
-		"/C/Users/alexandr/Downloads/php_code/index.php",
-		"/C/Users/alexandr/AppData/Local/Temp/scp36178/home/alexandr/wordpress/robots.txt",
-		"/C/Users/alexandr/AppData/Local/Temp/scp42834/etc/apache2/sites-enabled/a.qweekdev.com.conf",
-		"/C/Users/alexandr/AppData/Local/Temp/scp42802/home/alexandr/php_code/robots.txt",
-		"/C/Users/alexandr/AppData/Local/Temp/scp42424/etc/apache2/sites-enabled/demo.qweekdev.com.conf",
-		"/C/Users/alexandr/AppData/Local/Temp/scp42387/etc/apache2/sites-enabled/g.qweekdev.com.conf",
-		"/C/Users/alexandr/shut.bat",
-		"/C/Users/alexandr/AppData/Local/Temp/scp45441/home/alexandr/php_code/scripts/dem.js",
-		"/C/Users/alexandr/Downloads/albom/js/peppermint/package.json",
-		"/C/Users/alexandr/AppData/Local/Temp/TextEditorAnywhere_21_04_39.txt",
-		"/C/Users/alexandr/AppData/Local/Temp/Rar$DIa0.543/canvas-manipulation.js"
+		"/C/Users/alexandr/AppData/Local/Temp/scp07362/demo.qweekdev.com/public_html/include/sessionLifeTime.php"
 	],
 	"find":
 	{
@@ -412,6 +492,12 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"movePanelRight",
+			"movePanelLeft",
+			"right",
+			"left",
+			"li",
+			"enter",
 			"src",
 			"url",
 			"tooltip",
@@ -533,13 +619,7 @@
 			"pass",
 			"password",
 			"setnew_password_and_mail",
-			"showH1Tags",
-			"upload_max",
-			"192",
-			"168.1.2",
-			"dqweekdev",
-			"<",
-			"p>"
+			"showH1Tags"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -562,8 +642,98 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3208,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1572,
+								1572
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "css/index.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3048,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2765,
+								2765
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1428.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "js/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3667,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2071,
+								2071
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 504.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
