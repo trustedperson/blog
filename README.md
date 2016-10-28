@@ -1,2 +1,2 @@
-# demos
-i try to build mvc app
+# my mvc and adaptive (in fiture) app
+

@@ -132,6 +132,7 @@ a:focus,a:hover {
     list-style: none;
     width: 600px;
     height: 200px;
+    transition: width 1s;
 }
 
 .slider_controls_left {
