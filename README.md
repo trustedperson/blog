@@ -1,2 +1,2 @@
-# my mvc and adaptive (in future) app
+# my mvc and adaptive (in future) app .
 
