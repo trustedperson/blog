@@ -1,8 +1,8 @@
 <div class="top_right_panel">
             <?php
             if(empty($_SESSION['id']) or empty($_SESSION['login'])) {
-                echo '<a class="top_right_panel_button" href="login.php">Login page</a>';
-                echo '<a class="top_right_panel_button" href="reg.php">Sign UP</a>';
+                echo '<a class="top_right_panel_button" href="login">Login page</a>';
+                echo '<a class="top_right_panel_button" href="register">Sign UP</a>';
             }
 
             ?>

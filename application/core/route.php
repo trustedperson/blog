@@ -68,12 +68,11 @@ class Route
 	
 	}
 	
-	function ErrorPage404()
+	function errorPage404()
 	{
         $host = 'https://'.$_SERVER['HTTP_HOST'].'/';
         header('HTTPS/1.1 404 Not Found');
 		header("Status: 404 Not Found");
 		header('Location:'.$host.'404');
-		exit;
     }
 }

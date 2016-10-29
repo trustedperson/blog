@@ -5,10 +5,6 @@ require_once 'application/bootstrap.php';
 
     
 
-<?
-    session_start();   
-    include('include/session_lifetime.php');
-?>
 
     <?
     include_once "include/ez_sql_core.php";

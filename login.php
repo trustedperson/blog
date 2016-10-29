@@ -1,7 +1,5 @@
-<?php 
-session_start();
-include('include/session_lifetime.php');
-$loginResult = include ("include/try_login.php");
+<?
+
 if(!empty($_SESSION['id']) or !empty($_SESSION['login'])) {
     header('Location: http://alotof.work/');
     exit;
