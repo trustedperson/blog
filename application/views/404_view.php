@@ -1,2 +1,3 @@
-404 Page not found<br>
-return to <a href='/main'>index</a>
+<p>
+	404 Page not found
+</p>

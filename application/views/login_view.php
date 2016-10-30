@@ -1,12 +1,12 @@
 <form class="login_form" action="login/enter" method="post">
         <span>
-            <label>login:<br></label>
-            <input name="login" type="text" size="15" maxlength="15">
+            <label>Email:<br></label>
+            <input name="email" type="text" size="30" maxlength="30">
         </span>
         <br>
         <span>
-            <label>password:<br></label>
-            <input name="password" type="password" size="15" maxlength="15">
+            <label>Password:<br></label>
+            <input name="password" type="password" size="30" maxlength="30">
         </span>
         <br>
 

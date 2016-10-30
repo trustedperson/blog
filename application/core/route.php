@@ -48,7 +48,7 @@ class Route
 			правильно было бы кинуть здесь исключение,
 			но для упрощения сразу сделаем редирект на страницу 404
 			*/
-			Route::ErrorPage404();
+			errorPage404();
 		}
 		
 		// создаем контроллер
@@ -63,16 +63,8 @@ class Route
 		else
 		{
 			// здесь также разумнее было бы кинуть исключение
-			Route::ErrorPage404();
+			errorPage404();
 		}
 	
 	}
-	
-	function errorPage404()
-	{
-        $host = 'https://'.$_SERVER['HTTP_HOST'].'/';
-        header('HTTPS/1.1 404 Not Found');
-		header("Status: 404 Not Found");
-		header('Location:'.$host.'404');
-    }
 }
