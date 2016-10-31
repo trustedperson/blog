@@ -20,20 +20,6 @@
 	?>
 </div>
 <img class="pointer" src="https://alotof.work/images/chicken.gif">
-<div class="header">
-	<div class="header_navi">
-		<a href="/main" class="header_navi_btn">
-			: Главная :
-		</a> 
-		<a href="" class="header_navi_btn">
-			: Портфолио :
-		</a> 
-		<a href="" class="header_navi_btn">
-			: Контакты :
-		</a> 
-
-	</div>
-</div>
 <div class="wrap_slider">
     <ul class="slider">
         <li class="slider_panel">
@@ -65,6 +51,20 @@
 <div class="tooltip">
     <div class="tooltip_text">hi this is tooltip
     </div>
+</div>
+<div class="header">
+	<div class="header_navi">
+		<a href="/main" class="header_navi_btn">
+			: Главная :
+		</a> 
+		<a href="/portfolio" class="header_navi_btn">
+			: Портфолио :
+		</a> 
+		<a href="/about" class="header_navi_btn">
+			: Контакты :
+		</a> 
+
+	</div>
 </div>
 <div class="content">
 	<?php include 'application/views/'.$content_view; ?>

@@ -1,2 +1,2 @@
-        <a class="content_button" href="" data-section="todo" target="_blank">"todo list" service</a>
+        <p>Вы на главной! (тут приветствие..)</p>
         <p><? echo $data ?></p>

@@ -31,8 +31,9 @@ body {
     font-family: serif;
     width: 100%;
     height: 50px;
-    margin-bottom: 4px;
     background-color: #222222;
+    box-shadow: 2px 2px 2px black;
+    z-index: 2;
 }
 
 .header_navi {
@@ -54,12 +55,12 @@ body {
     border: none;
     text-decoration: none;
     text-align: center;
-    border-radius: 2px;
+    border-radius: 5px;
 }
 
 .header_navi_btn:hover {
     color: #FFFFFF;
-    background-color: #73878c;
+    background-color: #000000;
     text-shadow: 0px 0px 2px #111111;
 }
 
@@ -72,7 +73,7 @@ body {
     flex-direction: column; 
     align-items: center;
     flex-grow: 1;
-
+    z-index: 1;
 }
 
 .content_button {
@@ -91,6 +92,7 @@ body {
     position: absolute;
     top: -50px;
     transition: top 500ms cubic-bezier(0.000, 0.935, 0.050, 1.000), left 500ms cubic-bezier(0.000, 0.935, 0.050, 1.000);
+    z-index: 2;
 }
 
 .tooltip {
@@ -104,6 +106,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    z-index: 3;
 }
 
 .tooltip_text {
