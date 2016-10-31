@@ -23,13 +23,13 @@
 <div class="header">
 	<div class="header_navi">
 		<a href="/main" class="header_navi_btn">
-			Главная:
+			: Главная :
 		</a> 
 		<a href="" class="header_navi_btn">
-			Портфолио:
+			: Портфолио :
 		</a> 
 		<a href="" class="header_navi_btn">
-			Контакты:
+			: Контакты :
 		</a> 
 
 	</div>
