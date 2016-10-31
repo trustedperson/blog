@@ -7,6 +7,7 @@
 	<script src="/js/main.js"></script>
     <meta charset="UTF-8">
     <title>alotof.work</title>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
 <div class="top_right_panel">
@@ -68,13 +69,11 @@
 <div class="content">
 	<?php include 'application/views/'.$content_view; ?>
 </div>
-
-    <?php if(isset($_SESSION['registration_msg'])) {echo $_SESSION['registration_msg']; unset($_SESSION['registration_msg']);}
-    
-        if (session_exists())
-            {
-                echo "Вы вошли на сайт, как ".$_SESSION['email']."<br><form><button formaction='login/exit'><i class='fa fa-sign-out' aria-hidden='true'></i> Выход</button></form>";
-            }
+    <?    
+    if (session_exists())
+        {
+            echo "Вы вошли на сайт, как ".$_SESSION['email']."<br><form><button formaction='login/exit'><i class='fa fa-sign-out' aria-hidden='true'></i> Выход</button></form>";
+        }
     ?>
 </body>
 </html>

@@ -3,9 +3,9 @@ class Controller_Registration extends Controller {
 	
 	function action_index() {
 
-		// put error message in $data if message exists
-    	$data = empty($_SESSION['registration_error']) ? "" : $_SESSION['registration_error'];
-    	unset($_SESSION['registration_error']);
+		// put some message in $data if message exists
+    	$data = empty($_SESSION['registration_msg']) ? "" : $_SESSION['registration_msg'];
+    	unset($_SESSION['registration_msg']);
 
 		$this->view->generate('registration_view.php','template_view.php', $data);
 	}
@@ -19,7 +19,7 @@ class Controller_Registration extends Controller {
 			}
 			else 
 				{
-					$_POST['registration_error'] = $result;
+					$_SESSION['registration_msg'] = $result;
 					go_Url('registration');				
 				}
 	}
