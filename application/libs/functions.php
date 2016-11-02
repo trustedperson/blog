@@ -28,6 +28,15 @@ function httpPost($url, $data)
 }
 
 // sessions
+function reject_if_not_logged_in()
+{
+	if (!session_exists()) 
+			{
+				$_SESSION['user_msg'] = "Вы не авторизованы!";
+				go_Url('main');
+			}
+}
+
 function session_exists() {
 		if(!empty($_SESSION['id']) or !empty($_SESSION['email'])) {
 			return true;
@@ -35,3 +44,8 @@ function session_exists() {
 		return false;
 	}
 
+// html generation
+function a_href($url, $text = null)
+{
+	return "<a href=\"$url\">$text</a>";
+}
