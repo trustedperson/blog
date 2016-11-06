@@ -31,6 +31,11 @@
                 Контакты {..<span class="curly_brace">}</span>
             </a> 
     </div>
+    <div class="tooltip">
+        <div class="tooltip_text">
+            hi this is tooltip
+        </div>
+    </div>
 </div>
 
 <div class="main">
@@ -62,10 +67,7 @@
         RIGHT
     </div>
 </div>
-<div class="tooltip">
-    <div class="tooltip_text">hi this is tooltip
-    </div>
-</div>
+
 
 <div class="content">
     <?php include 'application/views/'.$content_view; ?>

@@ -28,11 +28,8 @@ body {
 }
 
 .sidebar_navi {
-    float: right;
-    margin-right: 5%;
-    border-bottom: 2px solid #444444;
+    float: left;
     padding: 10px;
-    min-width: 230px;
 }
 
 .sidebar_navi_btn {
@@ -42,7 +39,9 @@ body {
     color: #999999;
     border: none;
     text-decoration: none;
+    text-shadow: 1px 1px 1px black;
     text-align: right;
+    transition: color 500ms;
 }
 
 .sidebar_navi_btn:hover {
@@ -59,14 +58,15 @@ body {
 }
 
 .content {
-    background-color: #008B8B;
+    background-color: #DDDDDD;
     width: 100%;
 }
 
 .content_button {
+    display: block;
     font-size: 30px;
     font-family: sans-serif;
-    color: white;
+    color: #555555;
     text-decoration: none;
     margin: 5px;
     padding: 10px;
@@ -93,18 +93,16 @@ body {
 
 /* tooltip */
 .tooltip {
-    margin-left: 10px;
-    position: absolute;
+    float: right;
     height: 200px;
     width: 200px;
-    transform: scale(1,0);
-    background: url(../images/tooltip.gif);
-    transition: transform 300ms, height 0.5s, top 200ms;
-    z-index: 3;
+    opacity: 0;
+    /*background: url(../images/tooltip.gif);*/
+    transition: opacity 300ms;
 }
 
 .tooltip_text {
-    color: #555555;
+    color: #888888;
     font-size: 90%;
     font-weight: bold;
     font-family: sans-serif;
@@ -112,6 +110,7 @@ body {
     padding-bottom: 60px;
     padding-left: 20px;
     padding-right: 20px;
+    text-shadow: 1px 1px 1px black;
 }
 /* end */
 
@@ -121,14 +120,17 @@ body {
     font-family: sans-serif;
     position: absolute;
     right: 50px;
-    background-color: #008B8B;
+    background-color: #b35d08;
     box-shadow: 2px 2px 10px black;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
 }
 
 .top_right_panel_button {
     font-size: 20px;
     color: white;
     text-decoration: none;
+    text-shadow: 1px 1px 1px black;
     display: block;
     margin: 5px;
     padding: 5px;
