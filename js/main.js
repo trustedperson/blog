@@ -1,6 +1,18 @@
 // start js if DOMContentLoaded
 document.addEventListener("DOMContentLoaded", function(event) { 
 
+	// definition of elements position
+	var wrap_slider = document.querySelector(".wrap_slider");
+	redefineElementsPos();
+
+	function redefineElementsPos()
+	{
+		wrap_slider.style.marginLeft = ((window.innerWidth - 600) / 2) + "px";
+	}
+
+	// if window size changed - redefine elements position
+	window.addEventListener("resize", redefineElementsPos);
+
 	// pointer and tooltip code (duck and chicken)
 	var pointer = document.querySelector(".pointer");
 	var cb = document.getElementsByClassName("content_button");
@@ -48,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	// next define listeners for control buttons
 	var scl = document.querySelector(".slider_controls_left");
 	var scr = document.querySelector(".slider_controls_right");
-	var wrap_slider = document.querySelector(".wrap_slider");
+	
 	
 	
 	scl.addEventListener("click", moveLeft);
@@ -134,4 +146,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		scr.style.opacity = 1;
 	}
 	
+	// side_bar
+	var side_btn = document.querySelectorAll(".sidebar_navi_btn");
+	var c_brace = document.querySelectorAll(".curly_brace");
+	// crazy code here
+	for (i=0; i<side_btn.length; i++)
+	{
+		side_btn[i].addEventListener("mouseover", showDot);
+		side_btn[i].addEventListener("mouseout", hideDot);
+	}
+
+	function showDot(event)
+	{
+		var c = event.currentTarget.childNodes[1];
+		c.innerHTML = "..";
+	}
+	
+	function hideDot(event)
+	{
+		var h = event.currentTarget.childNodes[1];
+		h.innerHTML = "}";
+	}
+
 });

@@ -1,3 +1,4 @@
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <form class="reg_form" action="registration/enter" method="post">
         <span>
             <label>email:<br></label>

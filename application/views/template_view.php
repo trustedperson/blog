@@ -7,19 +7,33 @@
 	<script src="/js/main.js"></script>
     <meta charset="UTF-8">
     <title>alotof.work</title>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
 <div class="top_right_panel">
-	<?
-	if(!session_exists())
-	    {
-	        echo '<a class="top_right_panel_button" href="login">Login page</a>';
-	        echo '<a class="top_right_panel_button" href="registration">Sign UP</a>';
-	    }
-	?>
+    <?
+    if(!session_exists())
+        {
+            echo '<a class="top_right_panel_button" href="login">Login page</a>';
+            echo '<a class="top_right_panel_button" href="registration">Sign UP</a>';
+        }
+    ?>
 </div>
 <img class="pointer" src="https://alotof.work/images/chicken.gif">
+<div class="sidebar">
+    <div class="sidebar_navi">
+            <a href="/main" class="sidebar_navi_btn">
+                Главная {..<span class="curly_brace">}</span>
+            </a> 
+            <a href="/portfolio" class="sidebar_navi_btn">
+                Портфолио {..<span class="curly_brace">}</span>
+            </a> 
+            <a href="/about" class="sidebar_navi_btn">
+                Контакты {..<span class="curly_brace">}</span>
+            </a> 
+    </div>
+</div>
+
+<div class="main">
 <div class="wrap_slider">
     <ul class="slider">
         <li class="slider_panel">
@@ -52,22 +66,9 @@
     <div class="tooltip_text">hi this is tooltip
     </div>
 </div>
-<div class="header">
-	<div class="header_navi">
-		<a href="/main" class="header_navi_btn">
-			: Главная :
-		</a> 
-		<a href="/portfolio" class="header_navi_btn">
-			: Портфолио :
-		</a> 
-		<a href="/about" class="header_navi_btn">
-			: Контакты :
-		</a> 
 
-	</div>
-</div>
 <div class="content">
-	<?php include 'application/views/'.$content_view; ?>
+    <?php include 'application/views/'.$content_view; ?>
 </div>
     <?    
     if (session_exists())
@@ -75,5 +76,7 @@
             echo "Вы вошли на сайт, как ".$_SESSION['email']."<br><form><button formaction='login/exit'><i class='fa fa-sign-out' aria-hidden='true'></i> Выход</button></form>";
         }
     ?>
+
+</div>
 </body>
 </html>
