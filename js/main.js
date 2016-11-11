@@ -48,10 +48,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		l = event.currentTarget.getBoundingClientRect().left;
 		r = event.currentTarget.getBoundingClientRect().right;
 		b = event.currentTarget.getBoundingClientRect().bottom;
-		cr = content.getBoundingClientRect().right;
-		pointer.style.top = "" + (t + 0) + "px";
-		pointer.style.left = "" + (l - 100) + "px";
-		tooltip.style.left = "" + (cr) + "px";
+
+		pointer.style.top = (b + 0) + "px";
+		pointer.style.left = (r - 100) + "px";
 		tooltip.style.opacity = "1";
 		changeTooltipText(event.currentTarget.getAttribute("data-section"));
 	}
@@ -59,13 +58,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	function changeTooltipText(section) {
 		tooltip_text.innerHTML = "";
 		i = 0;
-		if (section == "wordpress") { animate("Шаблон wordpress"); }
-		else if (section == "todo") { animate("Привет как дела у меня хорошо все нормально а у тебя а  у меня плохо а че так да денег нет жрать нечего"); }
+		if (section == "wordpress") { animateText("Шаблон wordpress"); }
+		else if (section == "todo") { animateText("Привет как дела у меня хорошо все нормально а у тебя а  у меня плохо а че так да денег нет жрать нечего"); }
 	}
 
 	var animId;
 	var timeoutId;
-	function animate(text) 
+	function animateText(text) 
 	{
 			if (!timeoutId)
 			{
