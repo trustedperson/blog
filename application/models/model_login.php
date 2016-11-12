@@ -2,8 +2,6 @@
 class Model_Login extends Model {
 
 	function validateLoginAndLogIn() {
-		// reassignment
-		$db = $this->db;
 		// check: empty parameters?
 		if (empty($_POST['email']) or empty($_POST['password'])) 
 			{
@@ -24,19 +22,20 @@ class Model_Login extends Model {
 				return "Пароль или email слишком короткий!";
 			}
 		// check: special symbols?
-       	$db->escape($email);
-       	$db->escape($password);
+
         // check: user exists in db, and password is correct?
-       	$user = $db->get_row("SELECT * from users WHERE email='$email'");
-       	if (empty($user->email) or ($password != $user->password))
+		$sql = "SELECT * from users WHERE email='".$email."'";
+       	$stmt = $this->conn->query($sql);
+       	$row = $stmt->fetch();
+       	if (empty($row['email']) or ($password != $row['password']))
 	       	{
 	       		return "Email или пароль введён не верно";	
 	       	}
 	    // validation passed
-	    if ($password == $user->password) 
+	    if ($password == $row['password']) 
 	    	{
-	            $_SESSION['id']=$user->id;
-	            $_SESSION['email']=$user->email;
+	            $_SESSION['id']=$row['id'];
+	            $_SESSION['email']=$row['email'];
 	            return "success";
 	    	}
 	    }

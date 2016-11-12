@@ -1,11 +1,28 @@
 <?
+require 'vendor/autoload.php';
+use Doctrine\Common\ClassLoader;
+
 class Model {
-	public $db;
+	public $conn;
 	function __construct() {
-		include_once "include/ez_sql_core.php";
-		include_once "include/ez_sql_mysql.php";
-		include_once "../db_conf";
-		$this->db = new ezSQL_mysql($db_user,$db_password,$db_name,$db_host);
+		require 'vendor/doctrine/common/lib/Doctrine/Common/ClassLoader.php';
+		$classLoader = new ClassLoader('Doctrine', '/vendor/doctrine/common');
+		$classLoader->register();		
+
+		// global $db_name;
+		global $db_user;
+		global $db_password;
+		global $db_host;
+		global $db_name;
+		$config = new \Doctrine\DBAL\Configuration();
+		$connectionParams = array(
+		    'dbname' => $db_name,
+		    'user' => $db_user,
+		    'password' => $db_password,
+		    'host' => $db_host,
+		    'driver' => 'pdo_mysql',
+		);
+		$this->conn = \Doctrine\DBAL\DriverManager::getConnection($connectionParams, $config);
 	}
 
 	public function get_data()
