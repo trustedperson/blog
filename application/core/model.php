@@ -1,5 +1,4 @@
 <?
-require 'vendor/autoload.php';
 use Doctrine\Common\ClassLoader;
 
 class Model {

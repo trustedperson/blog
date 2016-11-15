@@ -12,7 +12,7 @@ class Controller_Login extends Controller {
 
 	function action_enter() {
 		$this->model = new Model_Login();
-		$result = $this->model->validateLoginAndLogIn();
+		$result = $this->model->validateLoginAndCreateSession();
 		if ($result == 'success')
 			{
 				go_Url('main');

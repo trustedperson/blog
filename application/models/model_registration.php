@@ -1,10 +1,7 @@
 <?
 class Model_Registration extends Model {
 	
-	function validateInputAndWrite() {
-		// reassignment
-		
-		$db = $this->db;
+	function validateInputAndInsert() {
 		// check: empty parameters?
 		if (empty($_POST['password']) or empty($_POST['email'])) 
 			{
@@ -16,10 +13,7 @@ class Model_Registration extends Model {
 					$password = $_POST['password'];
 				}
 		// check: special symbols?
-       	$email = $db->escape($email);
-       	$password = $db->escape($password);
-       	$email = trim($email);
-       	$password = trim($password);
+       	
 		// check: lenght is correct?
 		if (strlen($password) > 30 or strlen($email) > 30)	
 			{
@@ -30,8 +24,12 @@ class Model_Registration extends Model {
 				return "Email или пароль слишком короткий! Не менее 8 символов.";
 			}
        	// check: user already exists?
-       	$result = $db->get_row("SELECT * from users WHERE email='$email'");
-       	if (!empty($result)) 
+		$sql = "SELECT * from users WHERE email = :email";
+		$stmt = $this->conn->prepare($sql);
+		$stmt->bindValue("email", $email);
+		$stmt->execute();
+       	$row = $stmt->fetch();
+       	if (!empty($row)) 
 	       	{
 	       		return "Такой пользователь уже зарегистрирован!";
 	       	}
@@ -45,10 +43,15 @@ class Model_Registration extends Model {
 	    	return "Вы не прошли капчу google!";
 	    }
        	// put data into db
-		$db->query("INSERT INTO users (email, password) VALUES('$email', '$password')");
-		// if no rows affected...
-		if ($db->rows_affected != 1) return "Что-то пошло не так...";
-		$_SESSION['registration_msg'] = "Регистрация успешно завершена!";
+       	$password = password_hash($password, PASSWORD_DEFAULT);
+	    $sql = "INSERT INTO users (email, password) VALUES(:email, :password)";
+		$stmt = $this->conn->prepare($sql);
+		$stmt->bindValue("email", $email);
+		$stmt->bindValue("password", $password);
+		$success = $stmt->execute();
+		// if something wrong...
+		if (!$success) return "Что-то пошло не так...";
+		// if all correct
 		return "success";		       		
 
 	}

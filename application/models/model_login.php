@@ -1,7 +1,7 @@
 <?
 class Model_Login extends Model {
 
-	function validateLoginAndLogIn() {
+	function validateLoginAndCreateSession() {
 		// check: empty parameters?
 		if (empty($_POST['email']) or empty($_POST['password'])) 
 			{
@@ -23,20 +23,22 @@ class Model_Login extends Model {
 			}
 		// check: special symbols?
 
-        // check: user exists in db, and password is correct?
-		$sql = "SELECT * from users WHERE email='".$email."'";
-       	$stmt = $this->conn->query($sql);
+		// get data
+		$sql = "SELECT * from users WHERE email = :email";
+       	$stmt = $this->conn->prepare($sql);
+       	$stmt->bindValue("email", $email);
+       	$stmt->execute();
        	$row = $stmt->fetch();
-       	if (empty($row['email']) or ($password != $row['password']))
+        // check: user exists in db, and password is correct?
+       	if (empty($row['email']) or (!password_verify($password, $row['password'])))
 	       	{
 	       		return "Email или пароль введён не верно";	
 	       	}
 	    // validation passed
-	    if ($password == $row['password']) 
-	    	{
-	            $_SESSION['id']=$row['id'];
-	            $_SESSION['email']=$row['email'];
-	            return "success";
-	    	}
+        $_SESSION['id']=$row['id'];
+	    $_SESSION['email']=$row['email'];
+        return "success";
+	    // if something wrong
+	    return "Что-то пошло не так...";
 	    }
 }

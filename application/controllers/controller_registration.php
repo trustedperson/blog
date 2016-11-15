@@ -12,9 +12,10 @@ class Controller_Registration extends Controller {
 
 	function action_enter() {
 		$this->model = new Model_Registration();
-		$result = $this->model->validateInputAndWrite();
+		$result = $this->model->validateInputAndInsert();
 		if ($result == 'success') 
 			{
+				$_SESSION['user_msg'] = "Регистрация успешно завершена!";
 				go_Url('main');
 			}
 			else 
