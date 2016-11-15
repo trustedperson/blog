@@ -25,10 +25,10 @@
                 Главная {..<span class="curly_brace">}</span>
             </a> 
             <a href="/portfolio" class="sidebar_navi_btn">
-                Портфолио {..<span class="curly_brace">}</span>
+                Блог {..<span class="curly_brace">}</span>
             </a> 
             <a href="/about" class="sidebar_navi_btn">
-                Контакты {..<span class="curly_brace">}</span>
+                Обо мне {..<span class="curly_brace">}</span>
             </a> 
     </div>
     <div class="tooltip">

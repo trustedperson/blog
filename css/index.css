@@ -101,6 +101,7 @@ body {
 }
 
 .tooltip_text {
+    white-space: pre;
     color: #888888;
     font-size: 90%;
     font-weight: bold;

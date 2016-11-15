@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	// if window size changed - redefine elements position
 	window.addEventListener("resize", redefineElementsPos);
 
-	// pointer and tooltip code (duck and chicken)
+	// pointer and tooltip code 
 	var pointer = document.querySelector(".pointer");
 	var cb = document.getElementsByClassName("content_button");
 	
@@ -35,11 +35,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		{
 		  if (timeoutId) 
 		  	{
-		  		clearTimeout(timeoutId); timeoutId = null; 
+		  		clearTimeout(timeoutId);
+		  		timeoutId = null; 
 		  	} 
 		});
 	}
-	tooltip.top = content.getBoundingClientRect().top;
+	// tooltip.top = content.getBoundingClientRect().top;
 				
 
 	function pointerJump(event) {
@@ -59,26 +60,36 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		tooltip_text.innerHTML = "";
 		i = 0;
 		if (section == "wordpress") { animateText("Шаблон wordpress"); }
-		else if (section == "todo") { animateText("Привет как дела у меня хорошо все нормально а у тебя а  у меня плохо а че так да денег нет жрать нечего"); }
+		else if (section == "todo") { animateText("Привет как дела у меня хорошо всё нормально а у тебя а  у меня плохо а че так да денег нет жрать нечего"); }
 	}
 
 	var animId;
 	var timeoutId;
+	var lineWidth = 20;
+	var symbolCounter = 20;
 	function animateText(text) 
 	{
-			if (!timeoutId)
+		if (!timeoutId)
 			{
+				clearInterval(animId);
 				timeoutId = setTimeout(function()
 				{
 					timeoutId = null;
-					clearInterval(animId);
-					animId = setInterval(function(){
-					if (i<text.length)
+					symbolCounter = lineWidth; // initial width
+					animId = setInterval(function()
 					{
-						tooltip_text.innerHTML = tooltip_text.innerHTML + text[i];
-						i++
-					}
-					else clearInterval(animId);
+						
+						if (i<text.length)
+						{
+							tooltip_text.innerHTML = tooltip_text.innerHTML + text[i];
+							if (i>symbolCounter && text[i]==" ") // if end of word and symbols limit is out - get newline
+							{	
+								tooltip_text.innerHTML = tooltip_text.innerHTML + "<br>";
+								symbolCounter += lineWidth;
+							}
+							i++
+						}
+						else clearInterval(animId);
 					}, 15);
 				}, 1000);
 			}

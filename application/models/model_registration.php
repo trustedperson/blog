@@ -1,17 +1,19 @@
 <?
-class Model_Registration extends Model {
+class Model_Registration extends Model
+{
 	
-	function validateInputAndInsert() {
+	function validateInputAndInsert()
+	{
 		// check: empty parameters?
 		if (empty($_POST['password']) or empty($_POST['email'])) 
 			{
 				return "Вы ввели не всю информацию, заполните все поля!";
 			}
-			else
-				{
-					$email = $_POST['email'];
-					$password = $_POST['password'];
-				}
+		else
+			{
+				$email = $_POST['email'];
+				$password = $_POST['password'];
+			}
 		// check: special symbols?
        	
 		// check: lenght is correct?
@@ -39,9 +41,9 @@ class Model_Registration extends Model {
 	    $response = httpPost('https://www.google.com/recaptcha/api/siteverify',$post_data);
 	    $resp_array = json_decode($response,true);
 	    if (!$resp_array["success"]) 
-	    {
-	    	return "Вы не прошли капчу google!";
-	    }
+		    {
+		    	return "Вы не прошли капчу google!";
+		    }
        	// put data into db
        	$password = password_hash($password, PASSWORD_DEFAULT);
 	    $sql = "INSERT INTO users (email, password) VALUES(:email, :password)";
