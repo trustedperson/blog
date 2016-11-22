@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base href="https://alotof.work/">
     <link rel="icon" type="image/png" href="https://alotof.work/images/favicon.png">
     <link rel="stylesheet" type="text/css" href="css/index.css">
 	<!-- <script src="https://use.fontawesome.com/7e24d392b6.js"></script> -->

@@ -1,0 +1,3 @@
+<?
+echo $data->fetch()['text'];
+?>
