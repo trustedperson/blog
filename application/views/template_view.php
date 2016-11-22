@@ -13,8 +13,12 @@
     <?
     if(!session_exists())
         {
-            echo '<a class="top_right_panel_button" href="login">Login page</a>';
-            echo '<a class="top_right_panel_button" href="registration">Sign UP</a>';
+            echo '<a class="top_right_panel_button" href="login">Login</a>';
+            echo '<a class="top_right_panel_button" href="registration">Sign Up</a>';
+        }
+    if (session_exists())
+        {
+            echo "Вы вошли как<br>".$_SESSION['first_name']." ".$_SESSION['last_name']."!"."<br><form><button formaction='login/exit'> Выход</button></form>";
         }
     ?>
 </div>
@@ -24,7 +28,7 @@
             <a href="/main" class="sidebar_navi_btn">
                 Главная {..<span class="curly_brace">}</span>
             </a> 
-            <a href="/portfolio" class="sidebar_navi_btn">
+            <a href="/blog" class="sidebar_navi_btn">
                 Блог {..<span class="curly_brace">}</span>
             </a> 
             <a href="/about" class="sidebar_navi_btn">
@@ -39,46 +43,37 @@
 </div>
 
 <div class="main">
-<div class="wrap_slider">
-    <ul class="slider">
-        <li class="slider_panel">
-            <img width="600" height="200" src="images/back.jpg">
-        </li>
-        <li class="slider_panel">
-            <img width="600" height="200" src="images/avatar.png">
-        </li>
-        <li class="slider_panel">
-            <img width="600" height="200" src="images/avatar.png">
-        </li>
-        <li class="slider_panel">
-            <img width="600" height="200" src="images/avatar.png">
-        </li>
-        <li class="slider_panel">
-            <img width="600" height="200" src="images/avatar.png">
-        </li>
-        <li class="slider_panel">
-            <img width="600" height="200" src="images/back_rotated.jpg">
-        </li>
-    </ul>
-    <div class="slider_controls_left">
-        LEFT
+    <div class="wrap_slider">
+        <ul class="slider">
+            <li class="slider_panel">
+                <img width="600" height="200" src="images/back.jpg">
+            </li>
+            <li class="slider_panel">
+                <img width="600" height="200" src="images/avatar.png">
+            </li>
+            <li class="slider_panel">
+                <img width="600" height="200" src="images/avatar.png">
+            </li>
+            <li class="slider_panel">
+                <img width="600" height="200" src="images/avatar.png">
+            </li>
+            <li class="slider_panel">
+                <img width="600" height="200" src="images/avatar.png">
+            </li>
+            <li class="slider_panel">
+                <img width="600" height="200" src="images/back_rotated.jpg">
+            </li>
+        </ul>
+        <div class="slider_controls_left">
+            LEFT
+        </div>
+        <div class="slider_controls_right">
+            RIGHT
+        </div>
     </div>
-    <div class="slider_controls_right">
-        RIGHT
+    <div class="content">
+        <?php include 'application/views/'.$content_view; ?>
     </div>
-</div>
-
-
-<div class="content">
-    <?php include 'application/views/'.$content_view; ?>
-</div>
-    <?    
-    if (session_exists())
-        {
-            echo "Вы вошли на сайт, как ".$_SESSION['email']."<br><form><button formaction='login/exit'><i class='fa fa-sign-out' aria-hidden='true'></i> Выход</button></form>";
-        }
-    ?>
-
 </div>
 </body>
 </html>

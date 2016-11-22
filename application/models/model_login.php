@@ -37,6 +37,8 @@ class Model_Login extends Model {
 	    // validation passed
         $_SESSION['id']=$row['id'];
 	    $_SESSION['email']=$row['email'];
+	    $_SESSION['first_name']=$row['first_name'];
+	    $_SESSION['last_name']=$row['last_name'];
         return "success";
 	    // if something wrong
 	    return "Что-то пошло не так...";
