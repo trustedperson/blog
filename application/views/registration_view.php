@@ -22,7 +22,7 @@
         <br>
         <div class="g-recaptcha" data-sitekey="6LfOswoUAAAAAGntCXb1kY6lc6H0LOLQfOpbdyWl"></div>
         <span>
-            <button type="submit"><i class="fa fa-male" aria-hidden="true"></i> Зарегистрироваться!</button>
+            <button type="submit">Зарегистрироваться!</button>
         </span>
 
     </form>

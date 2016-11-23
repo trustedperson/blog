@@ -24,5 +24,4 @@ class Controller_Registration extends Controller {
 					go_Url('registration');				
 				}
 	}
-
 }

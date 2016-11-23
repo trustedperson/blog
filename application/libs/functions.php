@@ -26,12 +26,12 @@ function httpPost($url, $data)
 }
 
 // sessions
-function reject_if_not_logged_in()
+function reject_if_not_logged_in($url = 'main')
 {
 	if (!session_exists()) 
 			{
 				$_SESSION['user_msg'] = "Вы не авторизованы!";
-				go_Url('main');
+				go_Url($url);
 			}
 }
 

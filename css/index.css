@@ -1,9 +1,5 @@
 /* tags */
 
-/*@font-face {
-    font-family: "Times New Roman", Georgia, Serif;
-}*/
-
 html {
     height: 100%;
     background-color: white; 
@@ -128,6 +124,7 @@ a,a:hover
     border-right: 2px solid #a5a5a5;
     border-left: 2px solid #a5a5a5;
     border-bottom: 2px solid #a5a5a5;
+    z-index: 2;
 }
 
 .top_right_panel_button {
@@ -198,4 +195,16 @@ a,a:hover
     -ms-user-select: none;
     user-select: none;
     transition: opacity 500ms;
+}
+
+/* articles */
+.article_short_text
+{
+    width: 40%;
+}
+
+.article_fulltext
+{
+    width: 90%;
+    height: 200px;
 }
