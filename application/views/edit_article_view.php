@@ -7,22 +7,22 @@ if(!empty($_SESSION['user_msg']))
 ?>
 
 <?
-$row = $data->fetch();
+
 ?>
 <form action="article/update/" method="post">
 	<?
-	echo "<input type='hidden' name='id' value='".$row['id']."'>"
+	echo "<input type='hidden' name='id' value='".$data['id']."'>"
 	?>
 	<label>Заголовок!</label>
 	<br>
-	<textarea class="article_title" name="title"><? echo $row['title']; ?></textarea>
+	<textarea class="article_title" name="title"><? echo $data['title']; ?></textarea>
 	<br>
 	<label>Краткое описание</label>
 	<br>
-	<textarea class="article_short_text" name="short_text"><? echo $row['short_text']; ?></textarea>
+	<textarea class="article_short_text" name="short_text"><? echo $data['short_text']; ?></textarea>
 	<br>
 	<label>Текст статейки тут</label>
 	<br>
-	<textarea class="article_fulltext" name="text"><? echo $row['text']; ?></textarea>
+	<textarea class="article_fulltext" name="text"><? echo $data['text']; ?></textarea>
 	<button type="submit">Сохранить</button>
 </form>
