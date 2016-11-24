@@ -6,7 +6,8 @@
 while($row = $data->fetch())
 	{
 		echo "<a href='article/read/".$row['id']."'>".$row['title']."<a/>"."<br>";
-		echo $row['short_text'];
+		echo $row['short_text']."<br>";
+		echo "<a href='article/edit/".$row['id']."'>"."Редактировать</a>";
 		echo "<br><br>";
 	}
 

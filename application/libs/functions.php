@@ -41,9 +41,3 @@ function session_exists() {
 		}
 		return false;
 	}
-
-// html generation
-function a_href($url, $text = null)
-{
-	return "<a href=\"$url\">$text</a>";
-}

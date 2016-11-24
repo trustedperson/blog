@@ -50,7 +50,7 @@ class Model_Registration extends Model
 		    {
 		    	return "Вы не прошли капчу google!";
 		    }
-       	// put data into db
+       	// putting data into db
        	$password = password_hash($password, PASSWORD_DEFAULT);
 	    $sql = "INSERT INTO users (email, password, first_name, last_name, registration_date, latest_activity) VALUES(:email, :password, :first_name, :last_name, NOW(), NOW())";
 		$stmt = $this->conn->prepare($sql);

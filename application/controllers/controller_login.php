@@ -15,6 +15,7 @@ class Controller_Login extends Controller {
 		$result = $this->model->validateLoginAndCreateSession();
 		if ($result == 'success')
 			{
+				$_SESSION['user_msg'] = "Добро пожаловать!";
 				go_Url('main');
 			} 
 		else 
