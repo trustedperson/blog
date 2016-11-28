@@ -19,7 +19,7 @@
         }
     if (session_exists())
         {
-            echo "Вы вошли как<br>".$_SESSION['first_name']." ".$_SESSION['last_name']."!"."<br><form><button formaction='login/exit'> Выход</button></form>";
+            echo "Вы вошли как<br>".$_SESSION['first_name']." ".$_SESSION['last_name']."!"."<br><a href='profile'>Мой профиль</a><br><form><button formaction='login/exit'> Выход</button></form>";
         }
     ?>
 </div>

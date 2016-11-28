@@ -22,7 +22,7 @@ class Controller_Article extends Controller
 
 	function action_create()
 	{
-		reject_if_not_logged_in('blog');
+		reject_if_not_logged_in('login');
 		$this->model = new Model_Article();
 		$this->model->createArticle();
 	}
@@ -37,24 +37,28 @@ class Controller_Article extends Controller
 
 	function action_update()
 	{
+		reject_if_not_logged_in('login');
 		$this->model = new Model_Article();
 		$this->model->updateArticle();
 	}
 
-	function action_delete()
+	function action_close()
 	{
-		reject_if_not_logged_in('blog');
+		reject_if_not_logged_in('login');
 		$this->model = new Model_Article();
-		$res = $this->model->deleteArticle();
-		if($res == "no_perm")
-		{
-			$_SESSION['user_msg'] = "У Вас нет прав";
-			go_Url('blog');
-		}
-		if($res == 'success')
-		{
-			$_SESSION['user_msg'] = "Статья удалена!";
-			go_Url('blog');
-		}
+		$this->model->closeArticle();
+	}
+
+	function action_restore()
+	{
+		reject_if_not_logged_in('login');
+		$this->model = new Model_Article();
+		$res = $this->model->restoreArticle();
+	}
+
+	function action_new_comment()
+	{
+		$this->model = new Model_Article();
+		$this->model->newComment();
 	}
 }
