@@ -10,18 +10,12 @@ class Model_Article extends Model
 		}
 		$id = $routes[3];
 		// sql
-		$sql = "
-		SELECT
-			a.*, text 
-		FROM 
-			articles AS a, 
-			articles_details AS ad 
-		WHERE 
-			ad.article_id = :id AND a.id = :id";
-		$stmt = $this->conn->prepare($sql);
-		$stmt->bindValue("id", $routes[3]);
+		$sql = "SELECT a.*, text FROM articles AS a, articles_details AS ad WHERE ad.article_id = :id AND a.id = :aid";
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(":id", $routes[3], PDO::PARAM_INT);
+		$stmt->bindValue(":aid", $routes[3], PDO::PARAM_INT);
 		$stmt->execute();
-		$res = $stmt->fetch();
+		$res = $stmt->fetch(PDO::FETCH_ASSOC);
 		// end sql
 		if(empty($res['id']))
 		{
@@ -76,34 +70,40 @@ class Model_Article extends Model
 		// check: lenght is correct?
 
 		// putting data into db
-		$this->conn->beginTransaction();
+		$this->pdo->beginTransaction();
 		try
 		{
-			
 			// insert into articles
 			$sql = "INSERT INTO articles (owner_id, title, short_text, creation_date, state) VALUES (:owner_id, :title, :short_text, NOW(), 'publicated')";				
-			$stmt = $this->conn->prepare($sql);
-			$stmt->bindValue("owner_id", $_SESSION['id']);
-			$stmt->bindValue("title", $title);
-			$stmt->bindValue("short_text", $short_text);
+			$stmt = $this->pdo->prepare($sql);
+			$stmt->bindValue(":owner_id", $_SESSION['id'], PDO::PARAM_STR);
+			$stmt->bindValue(":title", $title, PDO::PARAM_STR);
+			$stmt->bindValue(":short_text", $short_text, PDO::PARAM_STR);
 			$stmt->execute();
 			// get atricle ID
-			$new_id = $this->conn->lastInsertId();
+			$new_id = $this->pdo->lastInsertId();
 			// insert into articles_details
 			$sql = "INSERT INTO articles_details (article_id, text) VALUES (:new_id, :text)";				
-			$stmt = $this->conn->prepare($sql);
-			$stmt->bindValue("new_id", $new_id);
-			$stmt->bindValue("text", $text);
+			$stmt = $this->pdo->prepare($sql);
+			$stmt->bindValue(":new_id", $new_id, PDO::PARAM_INT);
+			$stmt->bindValue(":text", $text, PDO::PARAM_STR);
 			$stmt->execute();
-
-			$this->conn->commit();
+			// $uploaddir = '/home/a/aarena5q/demo.qweekdev.com/public_html/images/';
+			// $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
+			// if (!move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile))
+			// {
+			// 	$this->pdo->rollBack();
+			// 	$_SESSION['user_msg'] = $_FILES['userfile']['error'];
+			// 	go_Url('article/new/');
+			// }
+			$this->pdo->commit();
 			$_SESSION['user_msg'] = "Статья создана!";
 			go_Url('blog');
 		} 
-		catch (Exception $e)
+		catch (PDOException $ex)
 		{
-			$this->conn->rollBack();
-    		throw $e;
+			$this->pdo->rollBack();
+    		echo $ex->getMessage();
 		}
 	}
 
@@ -125,8 +125,8 @@ class Model_Article extends Model
 		$text = $_POST['text'];
 		// check: have permission, article exists?
 		$sql = "SELECT id, owner_id FROM articles WHERE id = :post_id";
-		$stmt = $this->conn->prepare($sql);
-		$stmt->bindValue("post_id", $_POST['id']);
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(":post_id", $_POST['id'], PDO::PARAM_INT);
 		$stmt->execute();
 		$res = $stmt->fetch();
 		if(empty($res['id']))
@@ -140,31 +140,32 @@ class Model_Article extends Model
 			go_Url('blog');
 		}
 		// putting data into db
-		$this->conn->beginTransaction();
+		$this->pdo->beginTransaction();
 		try
 		{
 			// insert into articles
-			$sql = "UPDATE articles SET id = :id, owner_id = :sess_id, title = :title, short_text = :short_text WHERE id = :id";				
-			$stmt = $this->conn->prepare($sql);
-			$stmt->bindValue("id", $id);
-			$stmt->bindValue("sess_id", $_SESSION['id']);
-			$stmt->bindValue("title", $title);
-			$stmt->bindValue("short_text", $short_text);
+			$sql = "UPDATE articles SET id = :id, owner_id = :sess_id, title = :title, short_text = :short_text WHERE id = :aid";				
+			$stmt = $this->pdo->prepare($sql);
+			$stmt->bindValue(":id", $id, PDO::PARAM_INT);
+			$stmt->bindValue(":sess_id", $_SESSION['id'], PDO::PARAM_INT);
+			$stmt->bindValue(":title", $title, PDO::PARAM_STR);
+			$stmt->bindValue(":short_text", $short_text, PDO::PARAM_STR);
+			$stmt->bindValue(":aid", $id, PDO::PARAM_INT);
 			$stmt->execute();
 			// insert into articles_details
 			$sql = "UPDATE articles_details AS ad JOIN articles AS a ON ad.article_id = a.id SET text = :text WHERE article_id = :article_id";				
-			$stmt = $this->conn->prepare($sql);
-			$stmt->bindValue("article_id", $id);
-			$stmt->bindValue("text", $text);
+			$stmt = $this->pdo->prepare($sql);
+			$stmt->bindValue(":text", $text, PDO::PARAM_STR);
+			$stmt->bindValue(":article_id", $id, PDO::PARAM_INT);
 			$stmt->execute();
-			$this->conn->commit();
+			$this->pdo->commit();
 			$_SESSION['user_msg'] = "Статья сохранена!";
 			go_Url('article/read/'.$id);
 		} 
-		catch (Exception $e)
+		catch (PDOException $ex)
 		{
-			$this->conn->rollBack();
-    		throw $e;
+			$this->pdo->rollBack();
+    		echo $ex->getMessage();
 		}
 	}
 
@@ -178,8 +179,8 @@ class Model_Article extends Model
 		}
 		// check: have permission, article already deleted?
 		$sql = "SELECT owner_id, state FROM articles WHERE id = :id";
-		$stmt = $this->conn->prepare($sql);
-		$stmt->bindValue("id", $routes[3]);
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(":id", $routes[3], PDO::PARAM_INT);
 		$stmt->execute();
 		$res = $stmt->fetch();
 		if($res['owner_id'] != $_SESSION['id'])
@@ -194,9 +195,9 @@ class Model_Article extends Model
 		}
 		// set state to draft
 		$sql = "UPDATE articles SET state = :draft WHERE id = :id";
-		$stmt = $this->conn->prepare($sql);
-		$stmt->bindValue("draft", "draft");
-		$stmt->bindValue("id", $routes[3]);
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(":draft", "draft", PDO::PARAM_STR);
+		$stmt->bindValue(":id", $routes[3], PDO::PARAM_INT);
 		$stmt->execute();
 		$_SESSION['user_msg'] = "Статья снята с публикации!";
 		go_Url('profile/articles');
@@ -211,15 +212,9 @@ class Model_Article extends Model
 			go_Url('blog');
 		}
 		// check: have permission, article already publicated?
-		$sql = "
-		SELECT 
-			owner_id, state
-		FROM 
-			articles 
-		WHERE 
-			id = :id";
-		$stmt = $this->conn->prepare($sql);
-		$stmt->bindValue("id", $routes[3]);
+		$sql = "SELECT owner_id, state FROM articles WHERE id = :id";
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(":id", $routes[3], PDO::PARAM_INT);
 		$stmt->execute();
 		$res = $stmt->fetch();
 		if($res['owner_id'] != $_SESSION['id'])
@@ -234,9 +229,9 @@ class Model_Article extends Model
 		}
 		// set state to publicated
 		$sql = "UPDATE articles SET state = :publicated WHERE id = :id";
-		$stmt = $this->conn->prepare($sql);
-		$stmt->bindValue("publicated", "publicated");
-		$stmt->bindValue("id", $routes[3]);
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(":publicated", "publicated", PDO::PARAM_STR);
+		$stmt->bindValue(":id", $routes[3], PDO::PARAM_INT);
 		$stmt->execute();
 		$_SESSION['user_msg'] = "Статья опубликована!";
 		go_Url('profile/articles');
@@ -250,15 +245,9 @@ class Model_Article extends Model
 			go_Url('blog');
 		}
 		$id = $routes[3]; 
-		$sql = "
-		SELECT 
-			*
-		FROM 
-			comments
-		WHERE 
-			article_id = :article_id AND state = 'publicated'";
-		$stmt = $this->conn->prepare($sql);
-		$stmt->bindValue("article_id", $id);
+		$sql = "SELECT * FROM comments WHERE article_id = :article_id AND state = 'publicated'";
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(":article_id", $id, PDO::PARAM_INT);
 		$stmt->execute();
 		return $stmt->fetchALL();
 	}
@@ -275,27 +264,25 @@ class Model_Article extends Model
 			$_SESSION['user_msg'] = "Не заполнены поля!";
 			go_Url('article/read/'.$_POST['article_id']);
 		}
-		$sql = "
-		INSERT INTO 
-		comments(
+		$sql = "INSERT INTO	comments(
 			article_id,
 			owner_id,
 			commenter_name,
 			text,
 			state,
 			creation_date)
-		VALUES
-			(:article_id,
+		VALUES(
+			:article_id,
 			:sess_id,
 			:commenter_name,
 			:comment_text,
 			'publicated',
 			NOW())";
-		$stmt = $this->conn->prepare($sql);
-		$stmt->bindValue("article_id", $_POST['article_id']);
-		$stmt->bindValue("sess_id", $owner_id);
-		$stmt->bindValue("commenter_name", $_POST['commenter_name']);
-		$stmt->bindValue("comment_text", $_POST['comment_text']);
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(":article_id", $_POST['article_id'], PDO::PARAM_INT);
+		$stmt->bindValue(":sess_id", $owner_id, PDO::PARAM_INT);
+		$stmt->bindValue(":commenter_name", $_POST['commenter_name'], PDO::PARAM_STR);
+		$stmt->bindValue(":comment_text", $_POST['comment_text'], PDO::PARAM_STR);
 		$stmt->execute();
 		$_SESSION['user_msg'] = "Каммент создан!";
 		go_Url('article/read/'.$_POST['article_id']);

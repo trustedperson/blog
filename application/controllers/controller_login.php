@@ -16,7 +16,13 @@ class Controller_Login extends Controller {
 		if ($result == 'success')
 			{
 				$_SESSION['user_msg'] = "Добро пожаловать!";
-				go_Url('main');
+				if (isset($_SESSION['last_page']))
+					{
+						header('Location:'.$_SESSION['last_page']);
+						unset($_SESSION['last_page']);
+						exit;
+					}
+				go_Url('blog');
 			} 
 		else 
 			{

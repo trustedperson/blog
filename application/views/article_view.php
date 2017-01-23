@@ -30,7 +30,7 @@ if(!empty($_SESSION['id']) and $data['article']['owner_id'] == $_SESSION['id'])
 	<br>
 	<input type="text" name="commenter_name">
 	<br>
-	<label>Ваш текст:</label>
+	<label>Ваш комментарий:</label>
 	<br>
 	<textarea class="comment_text" name="comment_text"></textarea>
 	<button type="submit">Добавить!</button>

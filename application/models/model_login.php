@@ -25,8 +25,8 @@ class Model_Login extends Model {
 
 		// get data
 		$sql = "SELECT * from users WHERE email = :email";
-       	$stmt = $this->conn->prepare($sql);
-       	$stmt->bindValue("email", $email);
+       	$stmt = $this->pdo->prepare($sql);
+       	$stmt->bindValue(":email", $email);
        	$stmt->execute();
        	$row = $stmt->fetch();
         // check: user exists in db, and password is correct?

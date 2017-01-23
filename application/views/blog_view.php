@@ -7,10 +7,10 @@ if(!empty($_SESSION['user_msg']))
 		unset($_SESSION['user_msg']);
 	}
 ?>
-<a href="article/new/">СОЗДАТЬ</a>
+<a href="article/new/">Создать</a>
 <br>
 <?
-while($row = $data->fetch())
+foreach ($data as $row)
 	{
 		echo "<a href='article/read/".$row['id']."'>".$row['title']."<a/>"."<br>";
 		echo $row['short_text']."<br>";

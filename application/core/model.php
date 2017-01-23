@@ -1,27 +1,17 @@
 <?
-use Doctrine\Common\ClassLoader;
-
-class Model {
-	public $conn;
-	function __construct() {
-		require 'vendor/doctrine/common/lib/Doctrine/Common/ClassLoader.php';
-		$classLoader = new ClassLoader('Doctrine', '/vendor/doctrine/common');
-		$classLoader->register();		
-
-		// global $db_name;
+class Model
+{
+	public $pdo;
+	function __construct()
+	{
 		global $db_user;
 		global $db_password;
 		global $db_host;
 		global $db_name;
-		$config = new \Doctrine\DBAL\Configuration();
-		$connectionParams = array(
-		    'dbname' => $db_name,
-		    'user' => $db_user,
-		    'password' => $db_password,
-		    'host' => $db_host,
-		    'driver' => 'pdo_mysql',
-		);
-		$this->conn = \Doctrine\DBAL\DriverManager::getConnection($connectionParams, $config);
+		$dsn = "mysql:host=".$db_host.";dbname=".$db_name.";charset=utf8mb4";
+		$this->pdo = new PDO($dsn, $db_user, $db_password);
+		$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$this->pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 	}
 
 	public function get_data()

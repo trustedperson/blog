@@ -19,21 +19,21 @@
         }
     if (session_exists())
         {
-            echo "Вы вошли как<br>".$_SESSION['first_name']." ".$_SESSION['last_name']."!"."<br><a href='profile'>Мой профиль</a><br><form><button formaction='login/exit'> Выход</button></form>";
+            echo "Вы вошли как<br>".$_SESSION['first_name']." ".$_SESSION['last_name']."!"."<br><a href='profile'>Мой профиль</a><br><form><button formaction='login/exit/'> Выход</button></form>";
         }
     ?>
 </div>
 <img class="pointer" src="https://alotof.work/images/chicken.gif">
 <div class="sidebar">
     <div class="sidebar_navi">
-            <a href="/main" class="sidebar_navi_btn">
+            <!-- <a href="/main" class="sidebar_navi_btn">
                 Главная {..<span class="curly_brace">}</span>
-            </a> 
+            </a>  -->
             <a href="/blog" class="sidebar_navi_btn">
                 Блог {..<span class="curly_brace">}</span>
             </a> 
             <a href="/about" class="sidebar_navi_btn">
-                Обо мне {..<span class="curly_brace">}</span>
+                Контакты {..<span class="curly_brace">}</span>
             </a> 
     </div>
     <div class="tooltip">

@@ -33,8 +33,8 @@ class Model_Registration extends Model
 			}
        	// check: user already exists?
 		$sql = "SELECT * from users WHERE email = :email";
-		$stmt = $this->conn->prepare($sql);
-		$stmt->bindValue("email", $email);
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(":email", $email, PDO::PARAM_STR);
 		$stmt->execute();
        	$row = $stmt->fetch();
        	if (!empty($row)) 
@@ -52,12 +52,25 @@ class Model_Registration extends Model
 		    }
        	// putting data into db
        	$password = password_hash($password, PASSWORD_DEFAULT);
-	    $sql = "INSERT INTO users (email, password, first_name, last_name, registration_date, latest_activity) VALUES(:email, :password, :first_name, :last_name, NOW(), NOW())";
-		$stmt = $this->conn->prepare($sql);
-		$stmt->bindValue("email", $email);
-		$stmt->bindValue("password", $password);
-		$stmt->bindValue("first_name", $first_name);
-		$stmt->bindValue("last_name", $last_name);
+	    $sql = "INSERT INTO users (
+		    email, 
+		    password, 
+		    first_name, 
+		    last_name, 
+		    registration_date, 
+		    latest_activity) 
+	    VALUES(
+		    :email, 
+		    :password, 
+		    :first_name, 
+		    :last_name, 
+		    NOW(), 
+		    NOW())";
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(":email", $email);
+		$stmt->bindValue(":password", $password);
+		$stmt->bindValue(":first_name", $first_name);
+		$stmt->bindValue(":last_name", $last_name);
 		$success = $stmt->execute();
 		// if something wrong...
 		if (!$success) return "Что-то пошло не так...";

@@ -30,6 +30,7 @@ function reject_if_not_logged_in($url = 'main')
 {
 	if (!session_exists()) 
 			{
+				$_SESSION['last_page'] = $_SERVER['REQUEST_URI'];
 				$_SESSION['user_msg'] = "Вы не авторизованы!";
 				go_Url($url);
 			}
