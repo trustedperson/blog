@@ -1,13 +1,14 @@
 <?
 class Route
 {
-	static function start()
+	public static $routes;
+	public static function start()
 	{
 		// контроллер и действие по умолчанию
 		$controller_name = 'Main';
 		$action_name = 'index';
 		
-		$routes = explode('/', $_SERVER['REQUEST_URI']);
+		$routes = Route::$routes = explode('/', $_SERVER['REQUEST_URI']);
 
 		// получаем имя контроллера
 		if ( !empty($routes[1]) )

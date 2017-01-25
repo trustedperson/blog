@@ -5,7 +5,7 @@ if(!empty($_SESSION['user_msg']))
 		unset($_SESSION['user_msg']);
 	}
 ?>
-<a href="article/new/">СОЗДАТЬ</a>
+<a href="article/new/">Создать</a>
 <br>
 <?
 while($row = $data->fetch())
@@ -21,5 +21,6 @@ while($row = $data->fetch())
 		{
 			echo "<a href='article/close/".$row['id']."'>"."Снять с публикации</a>";	
 		}
+		echo "<a href='article/destroy/".$row['id']."'>X</a>";
 		echo "<br><br>";
 	}

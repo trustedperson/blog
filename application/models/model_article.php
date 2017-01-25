@@ -3,7 +3,7 @@ class Model_Article extends Model
 {
 	function getFullArticle()
 	{
-		$routes = explode('/', $_SERVER['REQUEST_URI']);
+		$routes = Route::$routes;
 		if(!$routes[3])
 		{
 			go_Url('blog');
@@ -171,7 +171,7 @@ class Model_Article extends Model
 
 	function closeArticle()
 	{
-		$routes = explode('/', $_SERVER['REQUEST_URI']);
+		$routes = Route::$routes;
 		if(!$routes[3])
 		{
 			$_SESSION['user_msg'] = "Укажите номер статьи";
@@ -205,7 +205,7 @@ class Model_Article extends Model
 
 	function restoreArticle()
 	{
-		$routes = explode('/', $_SERVER['REQUEST_URI']);
+		$routes = Route::$routes;
 		if(!$routes[3])
 		{
 			$_SESSION['user_msg'] = "Укажите номер статьи";
@@ -237,9 +237,59 @@ class Model_Article extends Model
 		go_Url('profile/articles');
 	}
 
+	function destroyArticle()
+	{
+		$routes = Route::$routes;
+		if(!$routes[3])
+		{
+			$_SESSION['user_msg'] = "Укажите номер статьи";
+			go_Url('blog');
+		}
+		// check: have permission?
+		$sql = "SELECT owner_id FROM articles WHERE id = :id";
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(":id", $routes[3], PDO::PARAM_INT);
+		$stmt->execute();
+		$res = $stmt->fetch();
+		if($res['owner_id'] != $_SESSION['id'])
+		{
+			$_SESSION['user_msg'] = "У Вас нет прав";
+			go_Url('blog');
+		}
+		// fully remove article from db (with comments)!!
+		$this->pdo->beginTransaction();
+		try
+		{
+			// first goes articles_details row
+			$sql = "DELETE FROM articles_details WHERE articles_details.article_id = :id";
+			$stmt = $this->pdo->prepare($sql);
+			$stmt->bindValue(":id", $routes[3], PDO::PARAM_INT);
+			$stmt->execute(); 
+			// then comments row
+			$sql = "DELETE FROM comments WHERE comments.article_id = :id";
+			$stmt = $this->pdo->prepare($sql);
+			$stmt->bindValue(":id", $routes[3], PDO::PARAM_INT);
+			$stmt->execute();
+			// then articles row
+			$sql = "DELETE FROM articles WHERE articles.id = :id";
+			$stmt = $this->pdo->prepare($sql);
+			$stmt->bindValue(":id", $routes[3], PDO::PARAM_INT);
+			$stmt->execute();
+			$this->pdo->commit();
+			$_SESSION['user_msg'] = "Статья удалена!";
+			go_Url('profile/articles/');
+		}
+		catch (PDOException $ex)
+		{
+			$this->pdo->rollBack();
+    		echo $ex->getMessage();
+		}
+			
+	}
+
 	function getComments()
 	{
-		$routes = explode('/', $_SERVER['REQUEST_URI']);
+		$routes = Route::$routes;
 		if(!$routes[3])
 		{
 			go_Url('blog');

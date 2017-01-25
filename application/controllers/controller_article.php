@@ -56,6 +56,13 @@ class Controller_Article extends Controller
 		$res = $this->model->restoreArticle();
 	}
 
+	function action_destroy()
+	{
+		reject_if_not_logged_in('login');
+		$this->model = new Model_Article();
+		$this->model->destroyArticle();
+	}
+
 	function action_new_comment()
 	{
 		$this->model = new Model_Article();
