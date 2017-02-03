@@ -20,7 +20,8 @@
             <input name="last_name" type="text" size="50" maxlength="50">
         </span>
         <br>
-        <div class="g-recaptcha" data-sitekey="6LfOswoUAAAAAGntCXb1kY6lc6H0LOLQfOpbdyWl"></div>
+        <div class="g-recaptcha" data-sitekey="6LfOswoUAAAAAGntCXb1kY6lc6H0LOLQfOpbdyWl">
+        </div>
         <span>
             <button type="submit">Зарегистрироваться!</button>
         </span>

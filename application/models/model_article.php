@@ -55,6 +55,47 @@ class Model_Article extends Model
 
 	function createArticle()
 	{
+		$state = "publicated";
+		$itype = ".unknown";
+		// check: is image uploaded? if not get default
+		$image_dir = "/home/a/aarena5q/demo.qweekdev.com/public_html/images/";
+		if (($_FILES['image']['size']) == '0')
+		{
+			$image = "default.png";
+			$state = "draft";
+		}
+		else
+		{
+			if (exif_imagetype($_FILES['image']['tmp_name']) == IMAGETYPE_JPEG)
+			{
+				$itype = ".jpeg";
+			}
+			if (exif_imagetype($_FILES['image']['tmp_name']) == IMAGETYPE_PNG)
+			{
+				$itype = ".png";
+			}
+			$image = md5_file($_FILES['image']['tmp_name']) . "_orig" . $itype;
+			$image_web = md5_file($_FILES['image']['tmp_name']) . $itype;
+			$dir1 = substr($image, 0, 2)."/";
+			$dir2 = substr($image, 2, 2)."/";
+			if (!file_exists($image_dir.$dir1))
+				mkdir($image_dir.$dir1);
+			if (!file_exists($image_dir.$dir1.$dir2))
+				mkdir($image_dir.$dir1.$dir2);
+		}
+		if ($itype != ".unknown")
+		{
+			move_uploaded_file($_FILES['image']['tmp_name'], $image_dir.$dir1.$dir2.$image);
+			copy($image_dir.$dir1.$dir2.$image, $image_dir.$dir1.$dir2.$image_web);
+			$imagick = new Imagick($image_dir.$dir1.$dir2.$image_web);
+			$imagick->thumbnailImage(400,0);
+			$imagick->writeImage();	
+		}
+		else
+		{
+			$state = "draft";
+			$image = "default.png";
+		}
 		// check: empty parameters?
 		if (empty($_POST['title']) or empty($_POST['short_text']) or empty($_POST['text'])) 
 			{
@@ -74,11 +115,26 @@ class Model_Article extends Model
 		try
 		{
 			// insert into articles
-			$sql = "INSERT INTO articles (owner_id, title, short_text, creation_date, state) VALUES (:owner_id, :title, :short_text, NOW(), 'publicated')";				
+			$sql = "INSERT INTO articles (
+				owner_id, 
+				title, 
+				short_text, 
+				image, 
+				creation_date, 
+				state) 
+			VALUES (
+				:owner_id, 
+				:title, 
+				:short_text, 
+				:image, 
+				NOW(), 
+				:state)";				
 			$stmt = $this->pdo->prepare($sql);
 			$stmt->bindValue(":owner_id", $_SESSION['id'], PDO::PARAM_STR);
 			$stmt->bindValue(":title", $title, PDO::PARAM_STR);
 			$stmt->bindValue(":short_text", $short_text, PDO::PARAM_STR);
+			$stmt->bindValue(":image", $image_web, PDO::PARAM_STR);
+			$stmt->bindValue(":state", $state, PDO::PARAM_STR);
 			$stmt->execute();
 			// get atricle ID
 			$new_id = $this->pdo->lastInsertId();
@@ -88,23 +144,16 @@ class Model_Article extends Model
 			$stmt->bindValue(":new_id", $new_id, PDO::PARAM_INT);
 			$stmt->bindValue(":text", $text, PDO::PARAM_STR);
 			$stmt->execute();
-			// $uploaddir = '/home/a/aarena5q/demo.qweekdev.com/public_html/images/';
-			// $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
-			// if (!move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile))
-			// {
-			// 	$this->pdo->rollBack();
-			// 	$_SESSION['user_msg'] = $_FILES['userfile']['error'];
-			// 	go_Url('article/new/');
-			// }
 			$this->pdo->commit();
-			$_SESSION['user_msg'] = "Статья создана!";
-			go_Url('blog');
 		} 
 		catch (PDOException $ex)
 		{
 			$this->pdo->rollBack();
     		echo $ex->getMessage();
 		}
+		$_SESSION['user_msg'] = "Статья создана!";
+		go_Url('blog');
+
 	}
 
 	function updateArticle()

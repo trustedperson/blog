@@ -23,6 +23,15 @@ class Model_Login extends Model {
 			}
 		// check: special symbols?
 
+		// check: google reCAPTCHA
+	    $captcha_resp = $_POST['g-recaptcha-response'];
+	    $post_data = array('secret' => $GLOBALS["captcha_secret"], 'response' => $captcha_resp);
+	    $response = httpPost('https://www.google.com/recaptcha/api/siteverify',$post_data);
+	    $resp_array = json_decode($response,true);
+	    if (!$resp_array["success"]) 
+		    {
+		    	return "Вы не прошли капчу google!";
+		    }
 		// get data
 		$sql = "SELECT * from users WHERE email = :email";
        	$stmt = $this->pdo->prepare($sql);

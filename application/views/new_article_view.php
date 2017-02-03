@@ -17,7 +17,7 @@ if(!empty($_SESSION['user_msg']))
 	<label>Текст статейки тут</label>
 	<br>
 	<textarea class="article_fulltext" name="text"></textarea>
-	<button type="submit">Создать!</button>
 	<br>
-    Отправить этот файл: <input name="userfile" type="file" />
+    Отправить этот файл: <input name="image" type="file" />
+	<button type="submit">Создать!</button>
 </form>
