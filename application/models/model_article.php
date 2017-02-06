@@ -61,7 +61,7 @@ class Model_Article extends Model
 		$image_dir = "/home/a/aarena5q/demo.qweekdev.com/public_html/images/";
 		if (($_FILES['image']['size']) == '0')
 		{
-			$image = "default.png";
+			$image_web = "default.png";
 			$state = "draft";
 		}
 		else
@@ -88,16 +88,16 @@ class Model_Article extends Model
 			move_uploaded_file($_FILES['image']['tmp_name'], $image_dir.$dir1.$dir2.$image);
 			copy($image_dir.$dir1.$dir2.$image, $image_dir.$dir1.$dir2.$image_web);
 			$imagick = new Imagick($image_dir.$dir1.$dir2.$image_web);
-			$imagick->thumbnailImage(400,0);
+			$imagick->thumbnailImage(400,400, true);
 			$imagick->writeImage();	
 		}
 		else
 		{
 			$state = "draft";
-			$image = "default.png";
+			$image_web = "default.png";
 		}
 		// check: empty parameters?
-		if (empty($_POST['title']) or empty($_POST['short_text']) or empty($_POST['text'])) 
+		if (empty($_POST['title']) or empty($_POST['text'])) 
 			{
 				$_SESSION['user_msg'] = "Заполните все поля!";
 				go_Url('article/new/');
@@ -105,7 +105,7 @@ class Model_Article extends Model
 		else
 			{
 				$title = $_POST['title'];
-				$short_text = $_POST['short_text'];
+				$short_text = substr($_POST['text'], 0, 40) . "...";
 				$text = $_POST['text'];
 			}
 		// check: lenght is correct?
@@ -363,6 +363,16 @@ class Model_Article extends Model
 			$_SESSION['user_msg'] = "Не заполнены поля!";
 			go_Url('article/read/'.$_POST['article_id']);
 		}
+		// check: google reCAPTCHA
+	    $captcha_resp = $_POST['g-recaptcha-response'];
+	    $post_data = array('secret' => $GLOBALS["captcha_secret"], 'response' => $captcha_resp);
+	    $response = httpPost('https://www.google.com/recaptcha/api/siteverify',$post_data);
+	    $resp_array = json_decode($response,true);
+	    if (!$resp_array["success"]) 
+		    {
+		    	$_SESSION['user_msg'] = "капча не пройдена";
+				go_Url('blog');
+		    }
 		$sql = "INSERT INTO	comments(
 			article_id,
 			owner_id,

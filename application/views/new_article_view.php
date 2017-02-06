@@ -10,10 +10,6 @@ if(!empty($_SESSION['user_msg']))
 	<br>
 	<input type="text" name="title">
 	<br>
-	<label>Краткое описание</label>
-	<br>
-	<textarea class="article_short_text" name="short_text"></textarea>
-	<br>
 	<label>Текст статейки тут</label>
 	<br>
 	<textarea class="article_fulltext" name="text"></textarea>

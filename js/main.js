@@ -1,221 +1,104 @@
-// start js if DOMContentLoaded
-document.addEventListener("DOMContentLoaded", function(event) { 
-
-	// definition of elements position
-	var wrap_slider = document.querySelector(".wrap_slider");
-	var sidebar = document.querySelector(".sidebar");
-	var sidebar_navi = document.querySelector(".sidebar_navi");
-	var tooltip = document.querySelector(".tooltip");
-	redefineElementsPos();
-
-	function redefineElementsPos()
+// and before we define vars
+var link;
+var bar;
+// var menu;
+// var state;
+var txt;
+var bs;
+var tt; 
+//
+var tooltip;
+document.addEventListener("DOMContentLoaded", function(event)
+{
+	// menu vars
+	link = document.querySelectorAll(".link");
+	for (i=0; i<link.length; i++)
 	{
-		wrap_slider.style.marginLeft = ((window.innerWidth - 600) / 2) + "px";
-		tooltip.style.marginRight = (sidebar.offsetWidth - tooltip.offsetWidth) / 2 + "px";
-		tooltip.style.marginTop = ((sidebar.offsetHeight - sidebar_navi.offsetHeight) - 200) / 2 + "px";
-		sidebar_navi.style.marginLeft = ((sidebar.offsetWidth - sidebar_navi.offsetWidth) / 2) + "px";
-
-	}
-
-	// if window size changed - redefine elements position
-	window.addEventListener("resize", redefineElementsPos);
-
-	// pointer and tooltip code 
-	var pointer = document.querySelector(".pointer");
-	var cb = document.getElementsByClassName("content_button");
-	
-	var tooltip_text = document.querySelector(".tooltip_text");
-	var content = document.querySelector(".content");
-	
-	
-	var i;
-	for ( i=0 ; i<cb.length; i++ ) {
-		cb[i].addEventListener("mouseover", pointerJump);
-		cb[i].addEventListener("mouseleave", function()
-		{
-		  if (timeoutId) 
-		  	{
-		  		clearTimeout(timeoutId);
-		  		timeoutId = null; 
-		  	} 
-		});
-	}
-	// tooltip.top = content.getBoundingClientRect().top;
-				
-
-	function pointerJump(event) {
-
-		t = event.currentTarget.getBoundingClientRect().top;
-		l = event.currentTarget.getBoundingClientRect().left;
-		r = event.currentTarget.getBoundingClientRect().right;
-		b = event.currentTarget.getBoundingClientRect().bottom;
-
-		pointer.style.top = (b + 0) + "px";
-		pointer.style.left = (r - 100) + "px";
-		tooltip.style.opacity = "1";
-		changeTooltipText(event.currentTarget.getAttribute("data-section"));
-	}
-
-	function changeTooltipText(section) {
-		tooltip_text.innerHTML = "";
-		i = 0;
-		if (section == "wordpress") { animateText("Шаблон wordpress"); }
-		else if (section == "todo") { animateText("Привет как дела у меня хорошо всё нормально а у тебя а  у меня плохо а че так да денег нет жрать нечего"); }
-	}
-
-	var animId;
-	var timeoutId;
-	var lineWidth = 20;
-	var symbolCounter = 20;
-	function animateText(text) 
-	{
-		if (!timeoutId)
-			{
-				clearInterval(animId);
-				timeoutId = setTimeout(function()
-				{
-					timeoutId = null;
-					symbolCounter = lineWidth; // initial width
-					animId = setInterval(function()
-					{
-						
-						if (i<text.length)
-						{
-							tooltip_text.innerHTML = tooltip_text.innerHTML + text[i];
-							if (i>symbolCounter && text[i]==" ") // if end of word and symbols limit is out - get newline
-							{	
-								tooltip_text.innerHTML = tooltip_text.innerHTML + "<br>";
-								symbolCounter += lineWidth;
-							}
-							i++
-						}
-						else clearInterval(animId);
-					}, 15);
-				}, 1000);
-			}
-			
-	}
-
-
-	// slider code
-	// initial code for cut and paste slides
-	var slider = document.querySelector(".slider");
-	var panels = document.getElementsByClassName("slider_panel");
-	if (panels.length>0) {
-		panels[0].classList.add("active_panel");
-		// set attributes "last" and "first"
-		panels[panels.length-1].setAttribute("data-latest","true");
-		panels[0].setAttribute("data-first","true"); 
-	}
-	// next define listeners for control buttons
-	var scl = document.querySelector(".slider_controls_left");
-	var scr = document.querySelector(".slider_controls_right");
-	
-	
-	
-	scl.addEventListener("click", moveLeft);
-	scr.addEventListener("click", moveRight);
-
-	// fixed width
-	slider.style.width = "" + ((panels.length+1)*600) + "px"; 
-	// fixed start pos
-	slider.style.left = "0px";
-	var called = false;
-
-	function moveRight(event) {
-		if (called == true) return null;
-		called = true;
-		var active_panel = document.querySelector(".active_panel");
-		// if (active_panel.hasAttribute("data-latest")) {
-		
-		// 	active_panel.classList.remove("active_panel");
-		// 	panels[0].classList.add("active_panel");
-		// // }
-		if(active_panel.hasAttribute("data-latest")) {
-			var cloned = panels[0].cloneNode(true);
-			cloned.removeAttribute("data-first");
-			slider.appendChild(cloned);
-			panels[0].style.width = "0px";
-			
-			active_panel.removeAttribute("data-latest");
-			active_panel.nextElementSibling.setAttribute("data-latest","true");
-			active_panel.nextElementSibling.classList.add("active_panel");
-			active_panel.classList.remove("active_panel");
-			setTimeout(wait, 1000);
-			
-			// slider.style.left = "" + (parseInt(slider.style.left) - 600) + "px";
-		}
-		else {
-			active_panel.nextElementSibling.classList.add("active_panel");
-			active_panel.classList.remove("active_panel");	
-			slider.style.left = "" + (parseInt(slider.style.left) - 600) + "px";
-		}
-		called = false;
-	}
-
-	function moveLeft(event) {
-		var active_panel = document.querySelector(".active_panel");
-		// if (active_panel.hasAttribute("data-firstCLone")) {
-		// 	slider.style.left = "-" + ((panels.length-1)*600) + "px";
-		// 	panels[panels.length-1].classList.add("active_panel");
-		// 	active_panel.classList.remove("active_panel");
-		// }
-		
-		slider.style.left = "" + (parseInt(slider.style.left) + 600) + "px";
-		active_panel.previousElementSibling.classList.add("active_panel");	
-		
-		active_panel.classList.remove("active_panel");
-	
-	}
-
-	// timer for slider 
-	var timerId;
-	// mouseOutSlider();
-	// stop/start timer on mouse hover/out AND(!!) hide/show control buttons
-	// wrap_slider.addEventListener("mouseover",mouseOnSlider);
-	// wrap_slider.addEventListener("mouseleave",mouseOutSlider);
-
-	function wait() {
-		
-		slider.removeChild(panels[0]);
-		panels[0].setAttribute("data-first","true");
-	}
-
-	function mouseOutSlider() { 
-		timerId = setTimeout(function tick() {
-			moveLeft();
-			timerId = setTimeout(tick, 7000);
-		}, 7000);
-		scl.style.opacity = 0;
-		scr.style.opacity = 0;
-	}
-
-	function mouseOnSlider() { 
-		clearInterval(timerId);
-		scl.style.opacity = 1;
-		scr.style.opacity = 1;
+		link[i].addEventListener("mouseover", tooltipOn);
+		link[i].addEventListener("mouseleave", tooltipOff);
 	}
 	
-	// side_bar
-	var side_btn = document.querySelectorAll(".sidebar_navi_btn");
-	var c_brace = document.querySelectorAll(".curly_brace");
-	// crazy code here
-	for (i=0; i<side_btn.length; i++)
-	{
-		side_btn[i].addEventListener("mouseover", showDot);
-		side_btn[i].addEventListener("mouseout", hideDot);
-	}
+	// menu = document.querySelector("#menu");
+	// state = "closed";
+	tooltip = document.querySelectorAll(".tooltip");
+	bar = document.querySelector(".bar");
 
-	function showDot(event)
-	{
-		var c = event.currentTarget.childNodes[1];
-		c.innerHTML = "..";
-	}
-	
-	function hideDot(event)
-	{
-		var h = event.currentTarget.childNodes[1];
-		h.innerHTML = "}";
-	}
-
+	// text vars
+	txt = document.querySelector(".text");
+	bs = document.querySelector(".back_shadow");
+	tt = document.querySelector(".text_trigger");
 });
+// first define stop/play button
+function play()
+	{
+		var video = document.querySelector("#video");
+		var button = document.querySelector("#pause");
+		if (video.paused)
+		{
+			button.classList.remove("fa-play");
+			button.classList.add("fa-pause");
+			video.play();
+		}
+		else
+		{
+			button.classList.remove("fa-pause");
+			button.classList.add("fa-play");
+			video.pause();
+		}
+	}
+
+// function toggle_bar()
+// {
+// 	if (state == "closed")
+// 	{
+// 		for (i=0; i<link.length; i++)
+// 		{
+// 			link[i].style.visibility = "visible";
+// 			link[i].style.opacity = "1";
+// 		}
+// 		menu.style.color = "red";
+// 		state = "opened";
+// 	}
+// 	else if (state == "opened")
+// 	{
+// 		for (i=0; i<link.length; i++)
+// 		{
+// 			link[i].style.visibility = "hidden";
+// 			link[i].style.opacity = "0";
+// 		}
+// 		menu.style.color = "#DDDDDD";
+// 		state = "closed";
+// 	}
+// }
+
+
+
+function showText()
+{
+	txt.style.opacity = 1;
+	bs.style.opacity = 0.6;
+	bs.style.visibility = "visible";
+	tt.style.opacity = "0";
+}
+
+function closeText()
+{
+	txt.style.opacity = 0;	
+	bs.style.opacity = 0;
+	bs.style.visibility = "hidden";
+	tt.style.opacity = "1";
+}
+
+function tooltipOn(event)
+{
+	tooltip = event.currentTarget.nextElementSibling;
+	tooltip.style.opacity = "1";
+	tooltip.style.left = "-2.5em";
+}
+
+function tooltipOff(event)
+{
+	tooltip = event.currentTarget.nextElementSibling;
+	tooltip.style.opacity = "0";
+	tooltip.style.left = "-5em";
+}

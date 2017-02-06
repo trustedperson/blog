@@ -1,3 +1,4 @@
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <?
 if(!empty($_SESSION['user_msg']))
 	{
@@ -45,6 +46,9 @@ if(!empty($_SESSION['id']) and $data['article']['owner_id'] == $_SESSION['id'])
 	<br>
 	<textarea class="comment_text" name="comment_text"></textarea>
 	<button type="submit">Добавить!</button>
+	<br>
+        <div class="g-recaptcha" data-sitekey="6LfOswoUAAAAAGntCXb1kY6lc6H0LOLQfOpbdyWl">
+        </div>
 </form>
 <br>
 <?

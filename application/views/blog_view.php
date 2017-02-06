@@ -7,8 +7,6 @@ if(!empty($_SESSION['user_msg']))
 		unset($_SESSION['user_msg']);
 	}
 ?>
-<a href="article/new/">Создать</a>
-<br>
 <?
 foreach ($data as $row)
 	{
