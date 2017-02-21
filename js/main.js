@@ -78,7 +78,7 @@ function showText()
 	txt.style.opacity = 1;
 	bs.style.opacity = 0.6;
 	bs.style.visibility = "visible";
-	tt.style.opacity = "0";
+	tt.style.opacity = "0.2";
 }
 
 function closeText()

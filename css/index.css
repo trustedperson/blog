@@ -1,11 +1,11 @@
 /* tags */
 *:hover
 {
-    cursor: default;
 }
 
 html
 {
+    overflow: hidden;
     height: 100%;
     background-color: white; 
 }
@@ -20,12 +20,29 @@ body
 /* end */
 
 
+@media (min-aspect-ratio: 16/9)
+{
+    #video
+    {
+        min-width: 100%;
+        min-height: auto;    
+    }
+}
+
 /* video */
+@media (max-aspect-ratio: 16/9)
+{
+    #video
+    {
+        min-width: auto;
+        min-height: 100%;
+        
+    }
+}
+
 #video
 {
     position: fixed;
-    min-width: 100%;
-    min-height: 100%;
     left: 0px;
     top: 0px;
     z-index: -1;
@@ -37,7 +54,7 @@ body
     color: white;
     opacity: 0.8;
     text-shadow: 2px 2px black;
-    /*position: */
+    /*position */
     position: fixed;
     padding-top: 3%;
     padding-left: 3%;
@@ -47,7 +64,8 @@ body
 
 #pause:hover
 {
-    color: red;
+    color: #1fa9cb;
+    cursor: pointer;
 }
 /* video end*/
 
@@ -88,16 +106,24 @@ body
     text-decoration: none;
 }
 
+.link:hover .bar_icon
+{
+    color: #25c3ea;
+    margin-top: 5px;
+}
+
 .bar_icon
 {
     color: white;
     text-shadow: 2px 2px black;
-    
+    transition: all 0.3s;
 }
+
 
 .tooltip
 {
     color: white;
+    font-family: Tahoma, Geneva, sans-serif;
     text-shadow: 2px 2px black;
     left: -5em;
     top: -1em;
@@ -114,6 +140,7 @@ body
 
 .text
 {
+    font-family: "Times New Roman", Times, serif;
     position: fixed;
     width: 60%;
     height: 40%;
@@ -147,6 +174,13 @@ body
     bottom: 3%;
     left: 45%;
     color: white;
-    transition: opacity 1s;
+    transition: opacity 1s, color 0.5s;
+}
+
+.text_trigger:hover
+{
+    color: #1fa9cb;
+    bottom: 2.5%;
+    cursor: default;
 }
 /* text end */

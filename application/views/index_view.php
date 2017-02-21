@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
     <head>
         <base href="https://alotof.work/">
         <link rel="icon" type="image/png" href="https://alotof.work/images/favicon.png">
@@ -10,7 +10,7 @@
         <title>alotof.work</title>
     </head>
     <body>
-        <video id="video" width="400" autoplay muted loop>
+        <video id="video" autoplay muted loop>
           <?echo "<source src='resources/" . rand(1,4) . ".mp4' type='video/mp4'>"?>
           Your browser does not support HTML5 video.
         </video>
@@ -30,7 +30,10 @@
             <div class="tooltip">me</div>
         </div>
         <div class="text">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis lacus cursus, tempor urna id, laoreet orci. Fusce vitae arcu velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi non nunc sagittis, dictum risus vitae, finibus nulla. Ut eu orci sed lectus facilisis auctor et eu nunc. Mauris varius velit dui, sed fringilla diam ornare non. Curabitur pellentesque interdum risus et lacinia. Pellentesque diam ipsum, venenatis eu libero quis, interdum fringilla nunc. Duis in neque nisl. Duis tempor sed magna quis malesuada. Proin at velit ac neque ornare iaculis quis non enim. Nullam nec varius nisi. Vestibulum condimentum sapien turpis, consequat posuere magna feugiat vitae.
+            <p> Блог Александра Макаренкова </p>
+            <p> "О жизни в Петербурге и об IT."<br> </p>
+            В этом блоге я веду записи относительно своей деятельности и происходящих вокруг меня событий, а также просто записываю интересные моменты по разработке.
+                Любые мнения и комментарии приветствуются!<br> Feel free.                
         </div> 
         <div class="back_shadow">
         </div>

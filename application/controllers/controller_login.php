@@ -34,6 +34,6 @@ class Controller_Login extends Controller {
 	function action_exit() {
 		unset($_SESSION['id']);
 		unset($_SESSION['email']);
-		go_Url('main');
+		go_Url('blog');
 	}
 }

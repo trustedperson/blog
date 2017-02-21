@@ -105,7 +105,7 @@ class Model_Article extends Model
 		else
 			{
 				$title = $_POST['title'];
-				$short_text = substr($_POST['text'], 0, 40) . "...";
+				$short_text = mb_substr($_POST['text'], 0, 100) . "...";
 				$text = $_POST['text'];
 			}
 		// check: lenght is correct?
@@ -130,7 +130,7 @@ class Model_Article extends Model
 				NOW(), 
 				:state)";				
 			$stmt = $this->pdo->prepare($sql);
-			$stmt->bindValue(":owner_id", $_SESSION['id'], PDO::PARAM_STR);
+			$stmt->bindValue(":owner_id", $_SESSION['id'], PDO::PARAM_INT);
 			$stmt->bindValue(":title", $title, PDO::PARAM_STR);
 			$stmt->bindValue(":short_text", $short_text, PDO::PARAM_STR);
 			$stmt->bindValue(":image", $image_web, PDO::PARAM_STR);

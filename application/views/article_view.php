@@ -17,8 +17,7 @@ else
 }
 echo $data['article']['title']."<br>";
 echo "<img src='images/". $dir1 . $dir2 . $data['article']['image'] . "'><br>";
-echo $data['article']['short_text']."<br>";
-echo "<pre>".$data['article']['text']."</pre>"."<br><br>";
+echo "<div>".$data['article']['text']."</div>"."<br><br>";
 if(!empty($_SESSION['id']) and $data['article']['owner_id'] == $_SESSION['id'])
 {
 	echo "<a href='article/edit/".$data['article']['id']."'>"."Редактировать || </a>";
