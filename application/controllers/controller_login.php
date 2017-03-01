@@ -2,7 +2,7 @@
 class Controller_Login extends Controller {
 	
 	function action_index() {
-    	if (session_exists()) go_Url('main');
+    	if (has_login()) go_Url('main');
  		// put error message in $data if message exists
     	$data = empty($_SESSION['login_error']) ? "" : $_SESSION['login_error'];
     	unset($_SESSION['login_error']);

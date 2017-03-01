@@ -9,4 +9,9 @@ class Model_Profile extends Model
 		$stmt->execute();
 		return $stmt;
 	}
+
+	function getComments()
+	{
+		return $this->pdo->query("SELECT * FROM comments WHERE state = 'moderation'");
+	}
 }

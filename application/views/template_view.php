@@ -11,10 +11,12 @@
 </head>
 <body>
     <?
-    if (session_exists())
+    if (has_login())
         {
-            echo "<div class='top_right_panel'>
-                Вы вошли как<br>".$_SESSION['first_name']." ".$_SESSION['last_name']."!"."<br><a href='profile'>Мой профиль</a><br><br><form><button formaction='login/exit/'> Выход</button></form></div>";
+            echo "<div class='top_right_panel'>Вы вошли как<br>".$_SESSION['first_name']." ".$_SESSION['last_name']."!<br>";
+            echo "<a href='profile'>Мой профиль</a><br>";
+            echo "<a href='profile/moderation'>Модерация</a><br><br>";
+            echo "<form><button formaction='login/exit/'> Выход</button></form></div>";
         }
     ?>
 <div class="sidebar">

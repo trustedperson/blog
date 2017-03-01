@@ -1,6 +1,7 @@
 <?
 // for common use
-function go_Url($url) {
+function go_Url($url)
+{
 	$host = 'https://'.$_SERVER['HTTP_HOST'].'/';
 	header('Location:'.$host.$url);
 	exit;
@@ -28,7 +29,7 @@ function httpPost($url, $data)
 // sessions
 function reject_if_not_logged_in($url = 'main')
 {
-	if (!session_exists()) 
+	if (!has_login()) 
 			{
 				$_SESSION['last_page'] = $_SERVER['REQUEST_URI'];
 				$_SESSION['user_msg'] = "Вы не авторизованы!";
@@ -36,7 +37,8 @@ function reject_if_not_logged_in($url = 'main')
 			}
 }
 
-function session_exists() {
+function has_login()
+{
 		if(!empty($_SESSION['id']) or !empty($_SESSION['email'])) {
 			return true;
 		}

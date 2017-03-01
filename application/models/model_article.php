@@ -22,34 +22,24 @@ class Model_Article extends Model
 			go_Url('blog');
 		}
 		// permission check
-		if(session_exists())
+		if(has_login())
 		{
 			if($res['owner_id'] != $_SESSION['id'])
 			{
 				if($res['state'] == "draft")
-				{
 					go_Url('blog');
-				}
 				else
-				{
 					return $res;
-				}
 			}
 			else
-			{
 				return $res;
-			}
 		}
 		else
 		{
 			if($res['state'] == "draft")
-			{
 				go_Url('blog');
-			}
 			else
-			{
 				return $res;
-			}
 		}
 	}
 
@@ -353,7 +343,7 @@ class Model_Article extends Model
 
 	function newComment()
 	{
-		$owner_id = session_exists() ? $_SESSION['id'] : "";
+		$owner_id = has_login() ? $_SESSION['id'] : 0;
 		if(empty($_POST['article_id']))
 		{
 			go_Url('blog');
@@ -385,7 +375,7 @@ class Model_Article extends Model
 			:sess_id,
 			:commenter_name,
 			:comment_text,
-			'publicated',
+			'moderation',
 			NOW())";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->bindValue(":article_id", $_POST['article_id'], PDO::PARAM_INT);
@@ -399,6 +389,6 @@ class Model_Article extends Model
 
 	function deleteComment()
 	{
-
+		
 	}
 }
