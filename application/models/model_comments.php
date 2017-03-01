@@ -14,6 +14,6 @@ class Model_Comments extends Model
 		$stmt->bindValue(":state", "publicated", PDO::PARAM_STR);
 		$stmt->bindValue(":id", $comment_id, PDO::PARAM_INT);
 		$stmt->execute();
-		return $stmt->rowCount();
+		return $stmt->rowCount(); 
 	}
 }
