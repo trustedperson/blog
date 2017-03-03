@@ -13,7 +13,7 @@
     <?
     if (has_login())
         {
-            echo "<div class='top_right_panel'>Вы вошли как<br>".$_SESSION['first_name']." ".$_SESSION['last_name']."!<br>";
+            echo "<div class='admin_panel'>Вы вошли как<br>".$_SESSION['first_name']." ".$_SESSION['last_name']."!<br>";
             echo "<a href='profile'>Мой профиль</a><br>";
             echo "<a href='profile/moderation'>Модерация</a><br><br>";
             echo "<form><button formaction='login/exit/'> Выход</button></form></div>";
@@ -32,7 +32,7 @@
 
 <div class="main">
     <div class="content">
-        <?php include 'application/views/'.$content_view; ?>
+        <?php include '../application/views/'.$content_view; ?>
     </div>
 </div>
 </body>

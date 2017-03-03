@@ -3,6 +3,7 @@ class Controller_Test extends Controller
 {
 	function action_index()
 	{
+		reject_if_not_logged_in('login');
 		$this->model = new Model_Test();
 		$this->model->index();
 	}
