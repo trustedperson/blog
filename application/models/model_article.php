@@ -142,7 +142,7 @@ class Model_Article extends Model
     		echo $ex->getMessage();
 		}
 		$_SESSION['user_msg'] = "Статья создана!";
-		go_Url('blog');
+		go_Url('profile/articles');
 
 	}
 
