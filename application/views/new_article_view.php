@@ -6,14 +6,12 @@ if(!empty($_SESSION['user_msg']))
 	}
 ?>
 <form action="article/create/" enctype="multipart/form-data" method="post">
-	<label>Заголовок!</label>
+	<button class="form_button" type="submit">Создать!</button>
 	<br>
-	<input type="text" name="title">
+	<input class="form_title" type="text" name="title" placeholder="Заголовок" autocomplete="off" autofocus="on">
 	<br>
-	<label>Текст статейки тут</label>
+	<textarea class="form_text" name="text" placeholder="Печатай тут" autocomplete="off"></textarea>
 	<br>
-	<textarea class="article_fulltext" name="text"></textarea>
-	<br>
-    Отправить этот файл: <input name="image" type="file" />
-	<button type="submit">Создать!</button>
+    Отправить этот файл: <input class="form_imageload" name="image" type="file" />
+	
 </form>

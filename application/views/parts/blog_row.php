@@ -1,9 +1,9 @@
 <div class="item">
-	<a href="article/read/<? echo $row['id'] ?>">
-		<? echo $row['title'] ?>
+	<a href="article/read/<?= $row['id'] ?>">
+		<?= $row['title'] ?>
 	</a>
 	<br>
-	<? echo $row['short_text'] ?>
+	<?= $row['short_text'] ?>
 	<br>
 	<br>
 	<br>

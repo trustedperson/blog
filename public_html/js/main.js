@@ -7,6 +7,7 @@ var txt;
 var bs;
 var tt; 
 //
+var bigimage
 var tooltip;
 document.addEventListener("DOMContentLoaded", function(event)
 {
@@ -27,6 +28,9 @@ document.addEventListener("DOMContentLoaded", function(event)
 	txt = document.querySelector(".text");
 	bs = document.querySelector(".back_shadow");
 	tt = document.querySelector(".text_trigger");
+
+	// image var
+	bigimage = document.getElementById("big_image");
 });
 // first define stop/play button
 function play()
@@ -101,4 +105,14 @@ function tooltipOff(event)
 	tooltip = event.currentTarget.nextElementSibling;
 	tooltip.style.opacity = "0";
 	tooltip.style.left = "-5em";
+}
+
+function showBigImage()
+{
+	bigimage.style.top = "0px";		
+}
+
+function closeBigImage()
+{
+	bigimage.style.top = "-9999px";
 }

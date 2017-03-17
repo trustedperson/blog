@@ -13,8 +13,14 @@ html
 body
 {
     height: 100%;
-    margin: 0;
+    margin: 0px;
+    background-color: white;
+}
 
+i:hover
+{
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 a
@@ -23,7 +29,7 @@ a
     text-decoration:none;
     color: #3f89ff;
     font-family: Tahoma, Geneva, sans-serif;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
 a:hover
@@ -33,6 +39,13 @@ a:hover
 }
 
 /* end */
+
+.separator_word
+{
+    color: gray;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 1.3em;
+}
 
 #admin_panel
 {
@@ -51,43 +64,44 @@ a:hover
     top: 0em;
     left: 0px;
     right: 0px;
-    box-shadow: 0px 0px 4px 0px gray inset;
+    box-shadow: 0px 0px 4px 0px gray;
     padding-left: 4em;
     padding-right: 4em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     background-color: white;
     text-align: center;
-}
-
-#navi:hover
-{
-    box-shadow: 0px 0px 4px 0px gray;
+    transition: all .3s;
+    z-index: 1;
 }
 
 .navi_btn
 {
-    color: #7d8693;
+    margin: 0em;
+    padding: .5em;
+    text-decoration: none;
+    font-weight: bold;
+    color: gray;
     font-size: 1em;
-    transition: font-size 0.3s;
+    transition: all 0.3s;
 }
 
 .navi_btn:hover
 {
     text-decoration: none;
     font-size: 1.3em;
-    color: #3f89ff;
+    color: #505050;
 }
 
 /* end */
 
-/* all about middle block */
+/* all middle block */
 
 #content
 {
     margin-left: 20%;
     margin-right: 20%;
-    margin-top: 5em;
+    padding-top: 5em;
     text-align: center;
 }
 
@@ -98,3 +112,145 @@ a:hover
 }
 
 /* end */
+
+/* forms */
+
+.form_title
+{
+    width: 30em;
+    height: 5em;
+    font-size: 1.5em;
+    resize: none;
+}
+
+.form_text
+{
+    width: 30em;
+    height: 40em;
+    resize: none;
+    padding: 1em;
+    margin: 1em;
+    font-size: 1.5em;
+    border: none;
+    box-shadow: 0px 0px 9px 0px gray;
+}
+
+.form_button
+{
+    border: none;
+    width: 7em;
+    height: 2em;
+    background-color: #50ce9a;
+    color: white;
+}
+
+.form_button:hover
+{
+    background-color: #3ea57b;
+
+}
+
+/* end */
+
+#base_image
+{
+    width: 40em;
+}
+
+#big_image
+{
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    top: -9999px;
+    left: 0px;
+
+}
+
+/* article section */
+#article
+{
+    text-align: left;    
+    font-size: 1.5em;
+}
+
+#article_title
+{
+    color: #555;
+}
+
+#article_text
+{
+    border: none;
+    padding: 1em;
+    color: #222;
+}
+
+/* comments section */
+#username
+{
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+#comment_date
+{
+    font-family: Tahoma, Geneva, sans-serif;
+    color: gray;
+    font-size: 0.7em;
+}
+
+#comments
+{
+    font-size: 1.1em;
+    text-align: left;
+}
+
+#text
+{
+    padding: 1em;
+    border-left: solid 5px #48cdf2;
+}
+
+/* comments form section */
+#form_comments
+{
+    text-align: left;
+}
+
+#commenter_name
+{
+    font-size: 1.4em;
+    width: 20em;
+    padding: 1em;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+#comment_text
+{
+    font-size: 1.4em;
+    width: 40em;
+    height: 20em;
+    resize: none;
+    font-family: "Times New Roman", Times, serif;
+    border: none;
+    box-shadow: 1px 1px 5px 0px gray;
+    margin-top: 1em;
+    padding: 1em;
+}
+
+#submit_button
+{
+    font-size: 1.4em;
+    border: none;
+    width: 7em;
+    height: 2em;
+    background-color: #50ce9a;
+    color: white;
+}
+
+#submit_button:hover
+{
+    background-color: #3ea57b;
+}

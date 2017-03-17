@@ -1,11 +1,11 @@
 <div class="item">
-	<a href="article/read/<? echo $row['id']?>">
-		<? echo $row['title'] ?>
+	<a href="article/read/<?= $row['id']?>">
+		<?= $row['title'] ?>
 	</a>
 	<br>
-		<? echo $row['short_text'] ?>
+		<?= $row['short_text'] ?>
 	<br>
-	<a href="article/edit/<? echo $row['id'] ?>">
+	<a href="article/edit/<?= $row['id'] ?>">
 		Редактировать
 	</a>
 
@@ -22,10 +22,10 @@
 		}
 	?>
 
-	<a href="article/<? echo $action."/".$row['id'] ?>">
-		<? echo $txt ?>
+	<a href="article/<?= $action."/".$row['id'] ?>">
+		<?= $txt ?>
 	</a>
-	<a href="article/destroy/<? echo $row['id'] ?>">
+	<a href="article/destroy/<?= $row['id'] ?>">
 		Уничтожить навсегда
 	</a>
 	<br><br>

@@ -51,7 +51,7 @@ class Model_Article extends Model
 		$image_dir = "/home/a/aarena5q/demo.qweekdev.com/public_html/images/";
 		if (($_FILES['image']['size']) == '0')
 		{
-			$image_web = "default.png";
+			$image_web = "default.svg";
 			$state = "draft";
 		}
 		else
@@ -84,7 +84,7 @@ class Model_Article extends Model
 		else
 		{
 			$state = "draft";
-			$image_web = "default.png";
+			$image_web = "default.svg";
 		}
 		// check: empty parameters?
 		if (empty($_POST['title']) or empty($_POST['text'])) 
@@ -360,8 +360,8 @@ class Model_Article extends Model
 	    $resp_array = json_decode($response,true);
 	    if (!$resp_array["success"]) 
 		    {
-		    	$_SESSION['user_msg'] = "капча не пройдена";
-				go_Url('blog');
+		    	$_SESSION['user_msg'] = "Капча не пройдена!";
+				go_Url('article/read/'.$_POST['article_id']);
 		    }
 		$sql = "INSERT INTO	comments(
 			article_id,
@@ -383,7 +383,7 @@ class Model_Article extends Model
 		$stmt->bindValue(":commenter_name", $_POST['commenter_name'], PDO::PARAM_STR);
 		$stmt->bindValue(":comment_text", $_POST['comment_text'], PDO::PARAM_STR);
 		$stmt->execute();
-		$_SESSION['user_msg'] = "Каммент создан!";
+		$_SESSION['user_msg'] = "Комментарий создан и ожидает проверки!";
 		go_Url('article/read/'.$_POST['article_id']);
 	}
 
