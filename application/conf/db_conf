@@ -1,5 +1,0 @@
-<?
-$db_user = 'aarena5q_demo';
-$db_password = 'admin123';
-$db_name = 'aarena5q_demo';
-$db_host = 'localhost';

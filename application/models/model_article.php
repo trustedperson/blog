@@ -51,7 +51,7 @@ class Model_Article extends Model
 		$image_dir = "/home/a/aarena5q/demo.qweekdev.com/public_html/images/";
 		if (($_FILES['image']['size']) == '0')
 		{
-			$image_web = "default.svg";
+			$image_web = "images/default.svg";
 			$state = "draft";
 		}
 		else
@@ -68,6 +68,7 @@ class Model_Article extends Model
 			$image_web = md5_file($_FILES['image']['tmp_name']) . $itype;
 			$dir1 = substr($image, 0, 2)."/";
 			$dir2 = substr($image, 2, 2)."/";
+			$image_fullpath = "images/".$dir1.$dir2.$image_web;
 			if (!file_exists($image_dir.$dir1))
 				mkdir($image_dir.$dir1);
 			if (!file_exists($image_dir.$dir1.$dir2))
@@ -84,7 +85,7 @@ class Model_Article extends Model
 		else
 		{
 			$state = "draft";
-			$image_web = "default.svg";
+			$image_web = "images/default.svg";
 		}
 		// check: empty parameters?
 		if (empty($_POST['title']) or empty($_POST['text'])) 
@@ -123,7 +124,7 @@ class Model_Article extends Model
 			$stmt->bindValue(":owner_id", $_SESSION['id'], PDO::PARAM_INT);
 			$stmt->bindValue(":title", $title, PDO::PARAM_STR);
 			$stmt->bindValue(":short_text", $short_text, PDO::PARAM_STR);
-			$stmt->bindValue(":image", $image_web, PDO::PARAM_STR);
+			$stmt->bindValue(":image", $image_fullpath, PDO::PARAM_STR);
 			$stmt->bindValue(":state", $state, PDO::PARAM_STR);
 			$stmt->execute();
 			// get atricle ID

@@ -2,23 +2,14 @@
 <?
 	if(!empty($_SESSION['user_msg']))
 		{
-			echo "<p>".$_SESSION['user_msg']."</p>";
+			echo "<p id='user_msg'>".$_SESSION['user_msg']."</p>";
 			unset($_SESSION['user_msg']);
 		}
-	if ($data['article']['image'] != 'default.svg')
-	{
-		$dir1 = substr($data['article']['image'], 0, 2)."/";
-		$dir2 = substr($data['article']['image'], 2, 2)."/";
-	}
-	else
-	{
-		$dir1 = "";
-		$dir2 = "";
-	}
+	
 	$orig = str_replace(".", "_orig.", $data['article']['image']);
 ?>
-<img onclick="closeBigImage()" id="big_image" src="images/<?= $dir1 . $dir2 . $orig ?>">
-<img id="base_image" src="images/<?= $dir1 . $dir2 . $data['article']['image'] ?>">
+<img onclick="closeBigImage()" id="big_image" src="<?= $orig ?>">
+<img id="base_image" src="<?= $data['article']['image'] ?>" onclick="showBigImage()">
 <br>
 <i class="fa fa-search-plus" onclick="showBigImage()">Увеличить</i>
 <br>
@@ -30,31 +21,13 @@
 		<?= $data['article']['text'] ?>
 	</div>
 </div>
-
 <br>
-<br>
-<?
-if(!empty($_SESSION['id']) and $data['article']['owner_id'] == $_SESSION['id'])
-{
-	echo "<a href='article/edit/".$data['article']['id']."'>"."Редактировать	</a>";
-	if($data['article']['state'] == "draft")
-	{
-		echo "<a href='article/restore/".$data['article']['id']."'>"."	Опубликовать</a>";
-	}
-	else
-	{
-		echo "<a href='article/close/".$data['article']['id']."'>"."	Снять с публикации</a>";	
-	}
-}
-?>
-<br>
-<br>
-<div class="separator_word">Обсуждение:</div>
+<div class="separator">Обсуждение:</div>
 <br>
 <div id="comments">
 	
 	<? 
-	if(empty($data["comments"])) echo "Комментарии отсутствуют!	";
+	if(empty($data["comments"])) echo "А комментов то нет...";
 
 	foreach($data["comments"] as $comment) : ?>
 		<div id="username">
@@ -69,7 +42,7 @@ if(!empty($_SESSION['id']) and $data['article']['owner_id'] == $_SESSION['id'])
 		<br>
 	<? endforeach; ?>
 </div>
-<div class="separator_word">Оставить каммент:</div>
+<div class="separator">Оставить каммент:</div>
 <br>
 <form id="form_comments" action="article/new_comment/" method="post">
 	<?= "<input type='hidden' name='article_id' value='".$data['article']['id']."'>"; ?>
